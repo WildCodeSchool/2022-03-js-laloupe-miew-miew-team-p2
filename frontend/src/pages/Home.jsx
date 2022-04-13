@@ -1,8 +1,14 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import "./sass/home.scss";
+import { NavLink } from "react-router-dom";
 // eslint-disable-next-line import/no-unresolved
 import logo from "@assets/griffe.png";
 
 export default function Home() {
+  const devTeam = () => {
+    console.error("Developed by the Meow Team of the Wild Code School");
+  };
   return (
     <header>
       <div className="title">
@@ -20,12 +26,14 @@ export default function Home() {
             <div className="eye eye--right">
               <div className="eye-pupil" />
             </div>
-            <div className="muzzle" />
+            <div className="muzzle" onClick={() => devTeam()} />
           </div>
         </div>
       </div>
       <div className="fight-meow">
-        <div className="keypress fight-button">Fight Meow</div>
+        <NavLink to="/" className="fight-button">
+          Fight Meow
+        </NavLink>
       </div>
     </header>
   );

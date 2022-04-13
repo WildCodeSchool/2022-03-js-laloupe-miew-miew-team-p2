@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Nosifer&family=Roboto:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nosifer&family=Roboto:wght@100&display=swap");
 * {
   scroll-behavior: smooth;
 }
 $color-black: #161616;
 $color-white: #fff;
+$color-red: rgb(204, 60, 60);
 $size: 170px; // (Fully responsive)
 //Title
 .title {
@@ -184,7 +185,7 @@ $size: 170px; // (Fully responsive)
   top: 25%;
   height: 50%;
   width: 20%;
-  background: $color-black;
+  background: $color-red;
   border-radius: 50%;
   animation: look-around 4s infinite;
 
@@ -253,19 +254,23 @@ html {
 }
 // Fight Button
 .fight-button {
-    background-color: $color-white;
-    margin-top: 40px;
-    font-family: "Nosifer", sans-serif;
-    font-size: 1.8em;
-    justify-content: center;
-    display: flex;
-    box-shadow: 4px 5px 5px #919191;
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
+  background-color: $color-white;
+  margin-top: 40px;
+  font-family: "Nosifer", sans-serif;
+  font-size: 1.8em;
+  justify-content: center;
+  display: flex;
+  box-shadow: 4px 5px 5px #919191;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
 
-    &:hover {
-      border-radius: 20px;
-      transition: 0.5s ease-in-out;
-      color:rgb(204, 60, 60);
-    }
+  &:hover {
+    border-radius: 20px;
+    transition: 0.5s ease-in-out;
+    color: rgb(204, 60, 60);
+  }
+}
+a {
+  text-decoration: none;
+  color: $color-black;
 }
