@@ -6,6 +6,10 @@ $color-black: #161616;
 $color-white: #fff;
 $color-red: rgb(204, 60, 60);
 $size: 170px; // (Fully responsive)
+// Remove margin of the agentuserstylesheet body
+body {
+  margin: 0px;
+}
 //Title
 .title {
   color: $color-white;
@@ -245,11 +249,12 @@ $size: 170px; // (Fully responsive)
   border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
 }
 /* General page styling */
-html {
+header {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   background: $color-black;
 }
 // Fight Button
