@@ -4,7 +4,9 @@ import axios from "axios";
 import OpponentCat from "@components/OpponentCat";
 // eslint-disable-next-line import/no-unresolved
 import UserCat from "@components/UserCat";
+// eslint-disable-next-line import/no-unresolved
 import SelectButton from "@components/SelectButton";
+import "./sass/fightpage.scss";
 
 const FightPage = () => {
   const [cat, setCat] = useState(null);
@@ -37,7 +39,9 @@ const FightPage = () => {
       />
       {isStarted ? (
         <SelectButton isSelected={isSelected} setIsSelected={setIsSelected} />
-      ) : null}
+      ) : (
+        <SelectButton isSelected={isSelected} setIsSelected={setIsSelected} />
+      )}
       {isSelected ? (
         <button type="button" onClick={() => setIsStarted(true)}>
           Start Fight !
