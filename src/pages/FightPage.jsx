@@ -7,6 +7,7 @@ import UserCat from "@components/UserCat";
 // eslint-disable-next-line import/no-unresolved
 import SelectButton from "@components/SelectButton";
 import "./sass/fightpage.scss";
+import Header from "./Header";
 
 const FightPage = () => {
   const [cat, setCat] = useState(null);
@@ -30,25 +31,28 @@ const FightPage = () => {
   const [isSelected, setIsSelected] = useState(false);
   const [isStarted, setIsStarted] = useState(false);
   return (
-    <div>
-      <UserCat
-        cat={cat}
-        number={number}
-        setNumber={setNumber}
-        isSelected={isSelected}
-      />
-      {isStarted ? (
-        <SelectButton isSelected={isSelected} setIsSelected={setIsSelected} />
-      ) : (
-        <SelectButton isSelected={isSelected} setIsSelected={setIsSelected} />
-      )}
-      {isSelected ? (
-        <button type="button" onClick={() => setIsStarted(true)}>
-          Start Fight !
-        </button>
-      ) : null}
-      {isSelected ? <OpponentCat cat={cat} /> : null}
-    </div>
+    <section>
+      <Header />
+      <div className="hey">
+        <UserCat
+          cat={cat}
+          number={number}
+          setNumber={setNumber}
+          isSelected={isSelected}
+        />
+        {isStarted ? (
+          <SelectButton isSelected={isSelected} setIsSelected={setIsSelected} />
+        ) : (
+          <SelectButton isSelected={isSelected} setIsSelected={setIsSelected} />
+        )}
+        {isSelected ? (
+          <button type="button" onClick={() => setIsStarted(true)}>
+            Start Fight !
+          </button>
+        ) : null}
+        {isSelected ? <OpponentCat cat={cat} /> : null}
+      </div>
+    </section>
   );
 };
 
