@@ -7,6 +7,15 @@ export default function Header() {
       <NavLink to="/" className="navigation--title">
         Home
       </NavLink>
+      <NavLink to="/fightpage" className="navigation--title">
+        Fight
+      </NavLink>
+      <NavLink to="undefined" className="navigation--title">
+        Meow Who ?
+      </NavLink>
+      <NavLink to="undefined" className="navigation--title">
+        Contact
+      </NavLink>
     </nav>
   );
 }
