@@ -41,6 +41,10 @@ export default function Contact() {
           onChange={handleMessageChange}
         />
       </label>
+      <div>
+        <h3>The Meow Team Copyright 2022</h3>
+        <h4> No cats were harmed during the developpement of this game</h4>
+      </div>
     </form>
   );
 }
