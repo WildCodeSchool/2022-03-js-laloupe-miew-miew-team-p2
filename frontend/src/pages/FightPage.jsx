@@ -33,16 +33,14 @@ const FightPage = () => {
   return (
     <section>
       <Header />
-      <div className="hey">
+      <div className="fight-container">
         <UserCat
           cat={cat}
           number={number}
           setNumber={setNumber}
           isSelected={isSelected}
         />
-        {isStarted ? (
-          <SelectButton isSelected={isSelected} setIsSelected={setIsSelected} />
-        ) : (
+        {isStarted ? null : (
           <SelectButton isSelected={isSelected} setIsSelected={setIsSelected} />
         )}
         {isSelected ? (
@@ -50,7 +48,7 @@ const FightPage = () => {
             Start Fight !
           </button>
         ) : null}
-        {isSelected ? <OpponentCat cat={cat} /> : null}
+        {isStarted ? <OpponentCat cat={cat} /> : null}
       </div>
     </section>
   );
