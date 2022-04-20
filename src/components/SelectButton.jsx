@@ -1,4 +1,4 @@
-const SelectButton = (isSelected, setIsSelected) => {
+const SelectButton = ({ isSelected, setIsSelected }) => {
   return (
     <div>
       {isSelected ? (
