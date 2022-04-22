@@ -39,10 +39,15 @@ const UserCat = ({ cat, number, setNumber, isSelected }) => {
           <h2>Cat Fighter n°{number + 1} :</h2>
           <h2>{cat[number].name}</h2>
           <ul>
-            <li>Attack: {cat[number].other_pets_friendly * 10}</li>
-            <li>Power: {cat[number].min_weight * 3}</li>
-            <li>Defense: {cat[number].max_weight * 1.5}</li>
-            <li>Health: {cat[number].max_life_expectancy * 10}</li>
+            <li>Attack: {cat[number].other_pets_friendly}</li>
+            <li>Power: {cat[number].intelligence}</li>
+            <li>
+              Defense:{" "}
+              {Math.floor(
+                (cat[number].max_weight + cat[number].min_weight) / 2
+              )}
+            </li>
+            <li>Health: {cat[number].max_life_expectancy}</li>
             <li>Vitality: {cat[number].min_life_expectancy}</li>
             <li>Luck: {cat[number].playfulness}</li>
           </ul>
