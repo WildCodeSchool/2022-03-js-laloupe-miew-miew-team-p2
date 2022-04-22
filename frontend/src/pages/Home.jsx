@@ -31,7 +31,7 @@ export default function Home() {
         </div>
       </div>
       <div className="fight-meow">
-        <NavLink to="/fightpage" className="fight-button">
+        <NavLink to="/content/fightpage" className="fight-button">
           Fight Meow
         </NavLink>
       </div>
