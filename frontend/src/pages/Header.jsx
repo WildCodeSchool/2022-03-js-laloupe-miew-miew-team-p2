@@ -49,6 +49,9 @@ export default function Header() {
       <NavLink to="/content/fightpage" className="navigation--title">
         Fight
       </NavLink>
+      <NavLink to="/content/meow" className="navigation--title">
+        Meow Who ?
+      </NavLink>
       <NavLink to="/content/contact" className="navigation--title">
         Contact
       </NavLink>
