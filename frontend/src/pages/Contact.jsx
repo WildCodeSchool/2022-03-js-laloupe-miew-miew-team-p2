@@ -12,7 +12,7 @@ export default function Contact() {
 
   return (
     <form>
-      <h2>Let s us improve the cat fight experience</h2>
+      <h2>Lets us improve the cat fight experience</h2>
       <label htmlFor="fullName">
         Name :
         <input
@@ -22,7 +22,6 @@ export default function Contact() {
           onChange={handleFullNameChange}
         />
       </label>
-      <br />
       <label htmlFor="email">
         Email :
         <input
@@ -41,7 +40,10 @@ export default function Contact() {
           onChange={handleMessageChange}
         />
       </label>
-      <div>
+      <button id="btn" type="submit">
+        SUBMIT
+      </button>
+      <div className="bottom">
         <h3>The Meow Team Copyright 2022</h3>
         <h4> No cats were harmed during the developpement of this game</h4>
       </div>
