@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 import { useState, useEffect } from "react";
 import wait from "./waitFunction";
 
