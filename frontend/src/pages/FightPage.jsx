@@ -1,14 +1,14 @@
+/* eslint-disable no-shadow */
 import { useEffect, useState } from "react";
 import axios from "axios";
-// eslint-disable-next-line import/no-unresolved
-import OpponentCat from "@components/OpponentCat";
-// eslint-disable-next-line import/no-unresolved
-import UserCat from "@components/UserCat";
-// eslint-disable-next-line import/no-unresolved
-import SelectButton from "@components/SelectButton";
+import Header from "./Header";
 import "./sass/fightpage.scss";
+import SelectMenu from "../components/fightpage-components/mode/SelectMenu";
+import Battle from "../components/fightpage-components/mode/Battle";
+import EndMenu from "../components/fightpage-components/mode/ResultMenu";
 
 const FightPage = () => {
+  const [mode, setMode] = useState("Select");
   const [cat, setCat] = useState(null);
   const getCat = () => {
     axios
@@ -26,29 +26,50 @@ const FightPage = () => {
   }, []);
 
   const [number, setNumber] = useState(0);
-
+  function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  const rdmNumber = getRandomNumber(0, 15);
   const [isSelected, setIsSelected] = useState(false);
-  const [isStarted, setIsStarted] = useState(false);
+  const [winner, setWinner] = useState(undefined);
   return (
-    <div className="hey">
-      <UserCat
-        cat={cat}
-        number={number}
-        setNumber={setNumber}
-        isSelected={isSelected}
-      />
-      {isStarted ? (
-        <SelectButton isSelected={isSelected} setIsSelected={setIsSelected} />
-      ) : (
-        <SelectButton isSelected={isSelected} setIsSelected={setIsSelected} />
-      )}
-      {isSelected ? (
-        <button type="button" onClick={() => setIsStarted(true)}>
-          Start Fight !
-        </button>
-      ) : null}
-      {isSelected ? <OpponentCat cat={cat} /> : null}
-    </div>
+    <section>
+      <Header />
+      <div className="fight-container">
+        {mode === "Select" && (
+          <SelectMenu
+            cat={cat}
+            number={number}
+            setNumber={setNumber}
+            isSelected={isSelected}
+            setIsSelected={setIsSelected}
+            onStartClick={() => setMode("Battle")}
+          />
+        )}
+        {mode === "Battle" && (
+          <Battle
+            cat={cat}
+            number={number}
+            rdmNumber={rdmNumber}
+            onResultClick={() => setMode("Result")}
+            onResult={(winner) => {
+              setWinner(winner);
+              setMode("Result");
+            }}
+          />
+        )}
+        {mode === "Result" && (
+          <EndMenu
+            winner={winner}
+            onSelectClick={() => {
+              setWinner(undefined);
+              setMode("Select");
+              setIsSelected(false);
+            }}
+          />
+        )}
+      </div>
+    </section>
   );
 };
 

@@ -21,7 +21,7 @@ const UserCat = ({ cat, number, setNumber, isSelected }) => {
         <section>
           {isSelected ? null : (
             <button type="button" onClick={prevCat}>
-              prev
+              Previous
             </button>
           )}
           <img
@@ -31,7 +31,7 @@ const UserCat = ({ cat, number, setNumber, isSelected }) => {
           />
           {isSelected ? null : (
             <button type="button" onClick={nextCat}>
-              next
+              Next
             </button>
           )}
         </section>
@@ -39,10 +39,12 @@ const UserCat = ({ cat, number, setNumber, isSelected }) => {
           <h2>Cat Fighter n°{number + 1} :</h2>
           <h2>{cat[number].name}</h2>
           <ul>
-            <li>attack: {cat[number].other_pets_friendly}</li>
-            <li>defense min: {cat[number].min_weight}</li>
-            <li>defense max: {cat[number].max_weight}</li>
-            <li>pv : {cat[number].max_life_expectancy}</li>
+            <li>Attack: {cat[number].other_pets_friendly * 10}</li>
+            <li>Power: {cat[number].min_weight * 3}</li>
+            <li>Defense: {cat[number].max_weight * 1.5}</li>
+            <li>Health: {cat[number].max_life_expectancy * 10}</li>
+            <li>Vitality: {cat[number].min_life_expectancy}</li>
+            <li>Luck: {cat[number].playfulness}</li>
           </ul>
         </section>
       </div>
