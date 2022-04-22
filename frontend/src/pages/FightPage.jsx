@@ -1,7 +1,6 @@
 /* eslint-disable no-shadow */
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Header from "./Header";
 import "./sass/fightpage.scss";
 import SelectMenu from "../components/fightpage-components/mode/SelectMenu";
 import Battle from "../components/fightpage-components/mode/Battle";
@@ -33,43 +32,40 @@ const FightPage = () => {
   const [isSelected, setIsSelected] = useState(false);
   const [winner, setWinner] = useState(undefined);
   return (
-    <section>
-      <Header />
-      <div className="fight-container">
-        {mode === "Select" && (
-          <SelectMenu
-            cat={cat}
-            number={number}
-            setNumber={setNumber}
-            isSelected={isSelected}
-            setIsSelected={setIsSelected}
-            onStartClick={() => setMode("Battle")}
-          />
-        )}
-        {mode === "Battle" && (
-          <Battle
-            cat={cat}
-            number={number}
-            rdmNumber={rdmNumber}
-            onResultClick={() => setMode("Result")}
-            onResult={(winner) => {
-              setWinner(winner);
-              setMode("Result");
-            }}
-          />
-        )}
-        {mode === "Result" && (
-          <EndMenu
-            winner={winner}
-            onSelectClick={() => {
-              setWinner(undefined);
-              setMode("Select");
-              setIsSelected(false);
-            }}
-          />
-        )}
-      </div>
-    </section>
+    <div className="fight-container">
+      {mode === "Select" && (
+        <SelectMenu
+          cat={cat}
+          number={number}
+          setNumber={setNumber}
+          isSelected={isSelected}
+          setIsSelected={setIsSelected}
+          onStartClick={() => setMode("Battle")}
+        />
+      )}
+      {mode === "Battle" && (
+        <Battle
+          cat={cat}
+          number={number}
+          rdmNumber={rdmNumber}
+          onResultClick={() => setMode("Result")}
+          onResult={(winner) => {
+            setWinner(winner);
+            setMode("Result");
+          }}
+        />
+      )}
+      {mode === "Result" && (
+        <EndMenu
+          winner={winner}
+          onSelectClick={() => {
+            setWinner(undefined);
+            setMode("Select");
+            setIsSelected(false);
+          }}
+        />
+      )}
+    </div>
   );
 };
 
