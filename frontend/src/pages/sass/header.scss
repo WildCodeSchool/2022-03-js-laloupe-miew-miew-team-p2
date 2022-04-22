@@ -142,6 +142,34 @@ label {
 .navigation--title {
   display: none;
 }
+
+.phoneDisappear {
+  animation: headerDisappear 1s forwards;
+}
+
+.phoneAppear {
+  animation: headerAppear 1s forwards;
+}
+
+@keyframes headerDisappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes headerAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media screen and (min-width: 500px) {
   .navigation--title {
     margin-right: 30px;

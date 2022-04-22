@@ -31,7 +31,9 @@ export default function Header() {
     });
 
     return () => {
-      window.removeEventListener("scroll");
+      window.removeEventListener("scroll", () => {
+        scrollFunction();
+      });
     };
   }, []);
 
@@ -44,40 +46,40 @@ export default function Header() {
       <NavLink to="/" className="navigation--title">
         Home
       </NavLink>
-      <NavLink to="/fightpage" className="navigation--title">
+      <NavLink to="/content/fightpage" className="navigation--title">
         Fight
       </NavLink>
-      <NavLink to="/meow" className="navigation--title">
-        Meow Who ?
-      </NavLink>
-      <NavLink to="/contact" className="navigation--title">
+      <NavLink to="/content/contact" className="navigation--title">
         Contact
       </NavLink>
       <div
-        className="phone"
-        style={{ display: phoneDisplay ? "block" : "none" }}
+        // className="phone"
+        // style={{ display: phoneDisplay ? "flex" : "none" }}
+        className={phoneDisplay ? "phone phoneAppear" : "phone phoneDisappear"}
         onScroll={scrollFunction}
       >
         <input
           type="radio"
           name="s"
           id="s1"
-          onChange={() => navigate("/meow")}
-          checked={location.pathname === "/meow" ? "checked" : null}
+          onChange={() => navigate("/content/meow")}
+          checked={location.pathname === "/content/meow" ? "checked" : null}
         />
         <input
           type="radio"
           name="s"
           id="s2"
-          onChange={() => navigate("/fightpage")}
-          checked={location.pathname === "/fightpage" ? "checked" : null}
+          onChange={() => navigate("/content/fightpage")}
+          checked={
+            location.pathname === "/content/fightpage" ? "checked" : null
+          }
         />
         <input
           type="radio"
           name="s"
           id="s3"
-          onChange={() => navigate("/contact")}
-          checked={location.pathname === "/contact" ? "checked" : null}
+          onChange={() => navigate("/content/contact")}
+          checked={location.pathname === "/content/contact" ? "checked" : null}
         />
         <label htmlFor="s1">
           <img src={IconBook} alt="Icon Book" />
