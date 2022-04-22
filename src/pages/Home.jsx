@@ -1,13 +1,13 @@
+/* eslint-disable no-alert */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import "./sass/home.scss";
 import { NavLink } from "react-router-dom";
-// eslint-disable-next-line import/no-unresolved
-import logo from "@assets/griffe.png";
+import logo from "../assets/griffe.png";
 
 export default function Home() {
   const devTeam = () => {
-    console.error("Developed by the Meow Team of the Wild Code School");
+    alert("Developed by the Meow Team of the Wild Code School");
   };
   return (
     <header>
