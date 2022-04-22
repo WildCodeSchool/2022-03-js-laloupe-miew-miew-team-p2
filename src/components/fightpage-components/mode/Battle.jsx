@@ -6,26 +6,27 @@ import wait from "../components/waitFunction";
 import useOpponentChoice from "../components/useOpponentChoice";
 
 export default function Battle({ cat, number, rdmNumber, onResult }) {
+  const userCat = {
+    name: "Your cat",
+    image: cat[number].image_link,
+    attack: cat[number].other_pets_friendly,
+    special: cat[number].intelligence,
+    defenseMin: cat[number].min_weight,
+    defenseMax: cat[number].max_weight,
+    health: cat[number].max_life_expectancy * 10,
+    luck: cat[number].playfulness,
+    vitality: cat[number].min_life_expectancy,
+  };
   const opponentCat = {
     name: "Opponent cat",
     image: cat[rdmNumber].image_link,
     attack: cat[rdmNumber].other_pets_friendly,
-    defmin: cat[rdmNumber].min_weight,
-    defmax: cat[rdmNumber].max_weight,
+    special: cat[rdmNumber].intelligence,
+    defenseMin: cat[rdmNumber].min_weight,
+    defenseMax: cat[rdmNumber].max_weight,
     health: cat[rdmNumber].max_life_expectancy * 10,
     luck: cat[rdmNumber].playfulness,
     vitality: cat[rdmNumber].min_life_expectancy,
-  };
-
-  const userCat = {
-    name: "Your cat",
-    image: cat[number].image_link,
-    attack: cat[number].other_pets_friendly * 8,
-    special: cat[number].min_weight * 3,
-    defense: cat[number].max_weight * 1.5,
-    health: cat[number].max_life_expectancy * 10,
-    luck: cat[number].playfulness,
-    vitality: cat[number].min_life_expectancy,
   };
 
   function getRdmNmb(min, max) {
@@ -33,12 +34,12 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
   }
 
   const attack = ({ attacker, receiver }) => {
-    const finalDamage = attacker.attack - receiver.defense;
+    const finalDamage = attacker.attack * 10 - receiver.defense;
     return finalDamage;
   };
 
   const special = ({ attacker, receiver }) => {
-    const finalDamage = attacker.special - receiver.defense;
+    const finalDamage = attacker.special * 4 - receiver.defense * 1.5;
     return finalDamage;
   };
 
