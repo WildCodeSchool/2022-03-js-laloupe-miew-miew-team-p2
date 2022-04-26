@@ -2,7 +2,6 @@
 import "./sass/header.scss";
 import { useState, useEffect } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import Logo from "../assets/griffe.png";
 import IconCat from "../assets/chat.png";
 import IconContact from "../assets/email.png";
 import IconBook from "../assets/livre-ouvert.png";
@@ -40,8 +39,7 @@ export default function Header() {
   return (
     <nav className="navigation">
       <NavLink to="/">
-        {" "}
-        <img src={Logo} alt="Logo of our website" className="resize--logo" />
+        <h1>CAT FIGHT</h1>
       </NavLink>
       <NavLink to="/" className="navigation--title">
         Home
