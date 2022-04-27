@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import "./sass/header.scss";
 import { useState, useEffect } from "react";
@@ -44,13 +45,34 @@ export default function Header() {
       <NavLink to="/" className="navigation--title">
         Home
       </NavLink>
-      <NavLink to="/content/fightpage" className="navigation--title">
+      <NavLink
+        to="/content/fightpage"
+        className={
+          location.pathname === "/content/fightpage"
+            ? "navigation--title active"
+            : "navigation--title"
+        }
+      >
         Fight
       </NavLink>
-      <NavLink to="/content/meow" className="navigation--title">
+      <NavLink
+        to="/content/meow"
+        className={
+          location.pathname === "/content/meow"
+            ? "navigation--title active"
+            : "navigation--title"
+        }
+      >
         Meow Who ?
       </NavLink>
-      <NavLink to="/content/contact" className="navigation--title">
+      <NavLink
+        to="/content/contact"
+        className={
+          location.pathname === "/content/contact"
+            ? "navigation--title active"
+            : "navigation--title"
+        }
+      >
         Contact
       </NavLink>
       <div
