@@ -6,6 +6,10 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/griffe.png";
 
 export default function Home() {
+  const audio = new Audio("https://www.mboxdrive.com/roar.mp3");
+  const start = () => {
+    audio.play();
+  };
   const devTeam = () => {
     alert("Developed by the Meow Team of the Wild Code School");
   };
@@ -31,7 +35,11 @@ export default function Home() {
         </div>
       </div>
       <div className="fight-meow">
-        <NavLink to="/content/fightpage" className="fight-button">
+        <NavLink
+          to="/content/fightpage"
+          className="fight-button"
+          onClick={start}
+        >
           Fight Meow
         </NavLink>
       </div>
