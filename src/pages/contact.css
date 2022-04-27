@@ -2,8 +2,6 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   background-color: #161616;
-  /* max-width: 100%;
-  max-height: 100%; */
 }
 
 form {
@@ -35,13 +33,16 @@ h5 {
   justify-content: center;
   display: flex;
   font-family: "Nosifer";
-  font-weight: 400;
+  font-weight: auto;
   font-size: 1rem;
   margin: 0.5rem;
   color: rgb(204, 60, 60);
   line-height: 1rem;
+  /*border-radius: 40px;
+  background-color: #4a4c44;*/
 }
-#input:focus ~ label,
+
+/*#input:focus ~ label,
 #textarea:focus ~ label,
 #input:valid ~ label,
 #textarea:valid ~ label {
@@ -51,14 +52,13 @@ h5 {
   -webkit-transition: all 0.225s ease;
   transition: all 0.225s ease;
 }
-
-#styled-input {
+.styled-input {
   justify-content: center;
   width: 100%;
   max-height: 100%;
   margin: 0;
   position: relative;
-  border-radius: 4px;
+  border-radius: 40px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -75,17 +75,14 @@ h5 {
   position: relative;
   top: 10px;
   left: 0;
+  border-radius: 40px;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   pointer-events: none;
 }
 
-#styled-input.wide {
-  width: 100%;
-  max-height: 100%;
-}
-
-#input {
+.input,
+textarea {
   justify-content: center;
   display: flex;
   width: 90%;
@@ -98,22 +95,18 @@ h5 {
   font-family: "Cochin";
 }
 
-label {
-  width: 100%;
-}
-
 #input:focus,
 textarea:focus {
   outline: 0;
 }
 
 #input:focus ~ span,
-textarea:focus ~ span {
+#textarea:focus ~ span {
   justify-content: center;
   width: 100%;
   -webkit-transition: all 0.075s ease;
   transition: all 0.075s ease;
-}
+} */
 
 #textarea {
   width: 100%;
@@ -122,19 +115,13 @@ textarea:focus ~ span {
   display: inline-block;
   margin: auto;
 }
-/*
-#message,#email,#fullName {
-  width:100%;
-  max-height:max-content;
-}
 
 #input-container {
   justify-content: center;
   width: 100%;
   max-height: 100%;
-
 }
-*/
+
 #btn {
   float: none;
   font-family: "Nosifer";
@@ -163,13 +150,3 @@ textarea:focus ~ span {
     float: none;
   }
 }
-/*
-#input[type="checkbox"] + label {
-  color: rgb(204, 60, 60);
-  font-style: "Nosifer";
-}
-
-#input[type="checkbox"]:checked + label {
-  color: rgb(204, 60, 60);
-  font-style: "Nosifer";
-} */
