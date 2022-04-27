@@ -1,11 +1,21 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-export default function BattleMenu({ onAttack, onSpecial, onHeal }) {
+export default function BattleMenu({ onAttack, onSpecial, onHeal, turn }) {
   return (
     <div>
-      <div onClick={onAttack}>Attack</div>
-      <div onClick={onSpecial}>Special</div>
-      <div onClick={onHeal}>Heal</div>
+      {turn === 0 ? (
+        <button type="button" onClick={onAttack}>
+          Attack
+        </button>
+      ) : null}
+      {turn === 0 ? (
+        <button type="button" onClick={onSpecial}>
+          Special
+        </button>
+      ) : null}
+      {turn === 0 ? (
+        <button type="button" onClick={onHeal}>
+          Heal
+        </button>
+      ) : null}
     </div>
   );
 }

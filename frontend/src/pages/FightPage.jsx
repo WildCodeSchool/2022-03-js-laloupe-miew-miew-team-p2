@@ -2,13 +2,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./sass/fightpage.scss";
-import SelectMenu from "../components/fightpage-components/mode/SelectMenu";
+import Select from "../components/fightpage-components/mode/Select";
 import Battle from "../components/fightpage-components/mode/Battle";
-import EndMenu from "../components/fightpage-components/mode/ResultMenu";
+import Result from "../components/fightpage-components/mode/Result";
 
 const FightPage = () => {
   const [mode, setMode] = useState("Select");
-  const [cat, setCat] = useState(null);
+  const [cat, setCat] = useState([]);
   const getCat = () => {
     axios
       .get("https://api.api-ninjas.com/v1/cats?min_weight=17", {
@@ -34,7 +34,7 @@ const FightPage = () => {
   return (
     <div className="fight-container">
       {mode === "Select" && (
-        <SelectMenu
+        <Select
           cat={cat}
           number={number}
           setNumber={setNumber}
@@ -56,7 +56,7 @@ const FightPage = () => {
         />
       )}
       {mode === "Result" && (
-        <EndMenu
+        <Result
           winner={winner}
           onSelectClick={() => {
             setWinner(undefined);
