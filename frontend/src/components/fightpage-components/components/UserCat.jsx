@@ -1,4 +1,4 @@
-const UserCat = ({ cat, number, setNumber, isSelected, catImage }) => {
+const UserCat = ({ cat, number, setNumber, isSelected }) => {
   const nextCat = () => {
     if (number !== cat.length - 1) {
       setNumber(number + 1);
