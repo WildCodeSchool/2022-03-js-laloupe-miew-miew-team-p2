@@ -16,7 +16,7 @@ const UserCat = ({ cat, number, setNumber, isSelected }) => {
   };
 
   return (
-    cat.length && (
+    cat && (
       <div className="user-cat">
         <section className="slide-container">
           {" "}

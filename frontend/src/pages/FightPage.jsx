@@ -8,7 +8,7 @@ import Result from "../components/fightpage-components/mode/Result";
 
 const FightPage = () => {
   const [mode, setMode] = useState("Select");
-  const [cat, setCat] = useState([]);
+  const [cat, setCat] = useState(null);
   const getCat = () => {
     axios
       .get("https://api.api-ninjas.com/v1/cats?min_weight=17", {
