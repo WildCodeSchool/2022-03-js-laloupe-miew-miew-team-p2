@@ -13,40 +13,30 @@ export default function Contact() {
   return (
     <form>
       <h2>Lets us improve the cat fight experience</h2>
-      <label htmlFor="fullName">
-        Name :
-        <input
-          id="fullName"
-          type="text"
-          value={fullName}
-          onChange={handleFullNameChange}
-        />
-      </label>
-      <label htmlFor="email">
-        Email :
-        <input
-          id="email"
-          type="email"
-          value={email}
-          onChange={handleEmailChange}
-        />
-      </label>
-      <label htmlFor="message">
-        Message :
-        <input
-          id="message"
-          type="message"
-          value={message}
-          onChange={handleMessageChange}
-        />
-      </label>
+      <h3>Name :</h3>
+      <input
+        id="fullName"
+        type="text"
+        value={fullName}
+        onChange={handleFullNameChange}
+      />
+      <h4>Email :</h4>
+      <input
+        id="email"
+        type="email"
+        value={email}
+        onChange={handleEmailChange}
+      />
+      <h5>Message :</h5>
+      <input
+        id="message"
+        type="message"
+        value={message}
+        onChange={handleMessageChange}
+      />
       <button id="btn" type="submit">
         SUBMIT
       </button>
-      <div className="bottom">
-        <h3>The Meow Team Copyright 2022</h3>
-        <h4> No cats were harmed during the developpement of this game</h4>
-      </div>
     </form>
   );
 }
