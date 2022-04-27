@@ -36,7 +36,6 @@ const FightPage = () => {
       {mode === "Select" && (
         <Select
           cat={cat}
-          number={number}
           setNumber={setNumber}
           isSelected={isSelected}
           setIsSelected={setIsSelected}
