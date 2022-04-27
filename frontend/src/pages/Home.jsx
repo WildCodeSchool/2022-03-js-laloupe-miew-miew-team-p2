@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-else-return */
 /* eslint-disable no-alert */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -13,9 +15,10 @@ export default function Home() {
   const devTeam = () => {
     alert("Developed by the Meow Team of the Wild Code School");
   };
+
   return (
     <header>
-      <div className="title">
+      <div id="text" className="title">
         <h1>CAT FIGHT</h1>
         <img src={logo} alt="Griffe de chat" className="picture--size" />
       </div>
