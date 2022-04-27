@@ -5,7 +5,7 @@ import BattleMenu from "../components/BattleMenu";
 import wait from "../components/waitFunction";
 import useOpponentChoice from "../components/useOpponentChoice";
 
-export default function Battle({ cat, number, rdmNumber, onResult, catImage }) {
+export default function Battle({ cat, number, rdmNumber, onResult }) {
   const userCat = {
     name: "Your cat",
     image: cat[number].image_link,
@@ -192,7 +192,7 @@ export default function Battle({ cat, number, rdmNumber, onResult, catImage }) {
       <h1 className="user-cat-name">{userCat.name}</h1>
       <img
         className="usercat-img-battle"
-        src={catImage[number]}
+        src={cat[number].image_link}
         alt="user cat"
       />
       <h2>
@@ -210,7 +210,7 @@ export default function Battle({ cat, number, rdmNumber, onResult, catImage }) {
       <h1 className="user-cat-name">{opponentCat.name}</h1>
       <img
         className="opponentcat-img-battle"
-        src={catImage[rdmNumber]}
+        src={cat[rdmNumber].image_link}
         alt="opponent cat"
       />
       <h2>
