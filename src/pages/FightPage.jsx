@@ -8,7 +8,7 @@ import Result from "../components/fightpage-components/mode/Result";
 
 const FightPage = () => {
   const [mode, setMode] = useState("Select");
-  const [cat, setCat] = useState(null);
+  const [cat, setCat] = useState([]);
   const getCat = () => {
     axios
       .get("https://api.api-ninjas.com/v1/cats?min_weight=17", {
@@ -36,6 +36,7 @@ const FightPage = () => {
       {mode === "Select" && (
         <Select
           cat={cat}
+          number={number}
           setNumber={setNumber}
           isSelected={isSelected}
           setIsSelected={setIsSelected}
