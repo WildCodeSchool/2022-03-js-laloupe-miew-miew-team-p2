@@ -1,7 +1,125 @@
-.fight-container{
-  background: white;
+$color-black: #2c2f33;
+$color-white: #fff;
+$color-red: rgb(174, 52, 52);
+$color-red2: rgb(204, 60, 60);
+$color-shadow: rgba(0, 0, 0, 0.25);
+
+body {
+  background-color: $color-black;
 }
-.img-cat {
-  width: 300px;
-  height: 200px;
+//Fightpage
+.fight-container {
+  background: $color-black;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 1rem;
+  display: block;
+  box-sizing: border-box;
+}
+//Select component
+.select {
+  //
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .isselected-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .select-btn {
+      text-align: center;
+      background-color: rgb(204, 60, 60);
+      font-family: "Nosifer", sans-serif;
+      font-size: 1em;
+      transition: 0.5s ease-in-out;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 2px 2px 5px 2px black;
+      color: white;
+      cursor: pointer;
+      padding: 0.3rem 0.8rem;
+      margin: 1rem;
+      &:hover {
+        transition: 0.5s ease-in-out;
+        color: black;
+      }
+    }
+
+    .fight-btn {
+      text-align: center;
+      background-color: rgb(204, 60, 60);
+      font-family: "Nosifer", sans-serif;
+      font-size: 1.6em;
+      transition: 0.5s ease-in-out;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 2px 2px 5px 2px black;
+      color: white;
+      cursor: pointer;
+      padding: 0.3rem 0.8rem;
+
+      &:hover {
+        transition: 0.5s ease-in-out;
+        color: black;
+      }
+    }
+  }
+}
+
+//UserCat component
+.user-cat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  .user-cat-name {
+    font-size: 1.6rem;
+    margin: 0.5rem;
+  }
+  .slide-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stats-container {
+    display: flex;
+  }
+  .user-stats {
+    text-align: center;
+  }
+  .usercat-img-select {
+    width: 60%;
+    border-radius: 20px;
+  }
+  .next-btn,
+  .prev-btn {
+    font-size: 5rem;
+    border: none;
+    border-radius: 10px;
+    color: $color-red2;
+    cursor: pointer;
+    padding: 0px 5px 5px 5px;
+    background-color: $color-black;
+  }
+  .usercat-select-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+//Battle component
+.battle {
+  width: 100%;
+  height: 100%;
+  .usercat-img-battle {
+    width: 400px;
+    height: 250px;
+  }
+  .opponentcat-img-battle {
+    width: 400px;
+    height: 250px;
+  }
 }

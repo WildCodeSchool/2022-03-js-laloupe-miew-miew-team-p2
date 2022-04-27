@@ -2,9 +2,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./sass/fightpage.scss";
-import SelectMenu from "../components/fightpage-components/mode/SelectMenu";
+import Select from "../components/fightpage-components/mode/Select";
 import Battle from "../components/fightpage-components/mode/Battle";
-import EndMenu from "../components/fightpage-components/mode/ResultMenu";
+import Result from "../components/fightpage-components/mode/Result";
+import catImage from "../components/fightpage-components/components/catImage";
 
 const FightPage = () => {
   const [mode, setMode] = useState("Select");
@@ -34,13 +35,14 @@ const FightPage = () => {
   return (
     <div className="fight-container">
       {mode === "Select" && (
-        <SelectMenu
+        <Select
           cat={cat}
           number={number}
           setNumber={setNumber}
           isSelected={isSelected}
           setIsSelected={setIsSelected}
           onStartClick={() => setMode("Battle")}
+          catImage={catImage}
         />
       )}
       {mode === "Battle" && (
@@ -53,10 +55,11 @@ const FightPage = () => {
             setWinner(winner);
             setMode("Result");
           }}
+          catImage={catImage}
         />
       )}
       {mode === "Result" && (
-        <EndMenu
+        <Result
           winner={winner}
           onSelectClick={() => {
             setWinner(undefined);

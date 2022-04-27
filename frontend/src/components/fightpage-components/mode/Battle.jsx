@@ -5,7 +5,7 @@ import BattleMenu from "../components/BattleMenu";
 import wait from "../components/waitFunction";
 import useOpponentChoice from "../components/useOpponentChoice";
 
-export default function Battle({ cat, number, rdmNumber, onResult }) {
+export default function Battle({ cat, number, rdmNumber, onResult, catImage }) {
   const userCat = {
     name: "Your cat",
     image: cat[number].image_link,
@@ -34,18 +34,24 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
   }
 
   const attack = ({ attacker, receiver }) => {
-    const finalDamage = attacker.attack * 10 - receiver.defense;
+    const finalDamage =
+      attacker.attack * getRdmNmb(7, 10) -
+      getRdmNmb(receiver.defenseMin, receiver.defenseMax);
     return finalDamage;
   };
 
   const special = ({ attacker, receiver }) => {
-    const finalDamage = attacker.special * 4 - receiver.defense * 1.5;
+    const finalDamage =
+      attacker.special * getRdmNmb(7, 10) -
+      getRdmNmb(receiver.defenseMin, receiver.defenseMax);
     return finalDamage;
   };
 
   const heal = ({ attacker }) => {
     return getRdmNmb(0, attacker.luck) * attacker.vitality;
   };
+
+  const [sequence, setSequence] = useState({});
 
   const useBattleSequence = (sequence) => {
     const [turn, setTurn] = useState(0);
@@ -161,8 +167,6 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
       announcerMessage,
     };
   };
-  const [sequence, setSequence] = useState({});
-
   const { turn, inSequence, userHealth, opponentHealth, announcerMessage } =
     useBattleSequence(sequence);
 
@@ -184,13 +188,18 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
   }, [userHealth, opponentHealth]);
 
   return (
-    <div>
-      <h1>{userCat.name}</h1>
-      <img src={userCat.image} alt="user cat" />
+    <div className="battle">
+      <h1 className="user-cat-name">{userCat.name}</h1>
+      <img
+        className="usercat-img-battle"
+        src={catImage[number]}
+        alt="user cat"
+      />
       <h2>
         <strong>{userHealth}</strong>
       </h2>
       <BattleMenu
+        turn={turn}
         onAttack={() => setSequence({ turn, mode: "attack" })}
         onSpecial={() => setSequence({ turn, mode: "special" })}
         onHeal={() => setSequence({ turn, mode: "heal" })}
@@ -198,8 +207,12 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
       <BattleAnnouncer
         message={announcerMessage || "What will your cat do ?"}
       />
-      <h1>{opponentCat.name}</h1>
-      <img src={opponentCat.image} alt="opponent cat" />
+      <h1 className="user-cat-name">{opponentCat.name}</h1>
+      <img
+        className="opponentcat-img-battle"
+        src={catImage[rdmNumber]}
+        alt="opponent cat"
+      />
       <h2>
         <strong>{opponentHealth}</strong>
       </h2>

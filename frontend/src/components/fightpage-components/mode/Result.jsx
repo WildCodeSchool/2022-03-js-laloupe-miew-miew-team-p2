@@ -1,6 +1,6 @@
-const EndMenu = ({ winner, onSelectClick }) => {
+const Result = ({ winner, onSelectClick }) => {
   return (
-    <div>
+    <div className="result">
       <h1>{winner.name} has won !</h1>
       <button type="button" onClick={onSelectClick}>
         Play Again.
@@ -8,4 +8,4 @@ const EndMenu = ({ winner, onSelectClick }) => {
     </div>
   );
 };
-export default EndMenu;
+export default Result;

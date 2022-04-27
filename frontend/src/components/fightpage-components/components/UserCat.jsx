@@ -1,4 +1,4 @@
-const UserCat = ({ cat, number, setNumber, isSelected }) => {
+const UserCat = ({ cat, number, setNumber, isSelected, catImage }) => {
   const nextCat = () => {
     if (number !== cat.length - 1) {
       setNumber(number + 1);
@@ -17,40 +17,57 @@ const UserCat = ({ cat, number, setNumber, isSelected }) => {
 
   return (
     cat && (
-      <div>
-        <section>
-          {isSelected ? null : (
-            <button type="button" onClick={prevCat}>
-              Previous
-            </button>
-          )}
-          <img
-            className="cat-img"
-            src={cat[number].image_link}
-            alt={cat[number].name}
-          />
-          {isSelected ? null : (
-            <button type="button" onClick={nextCat}>
-              Next
-            </button>
-          )}
-        </section>
-        <section>
-          <h2>Cat Fighter n°{number + 1} :</h2>
-          <h2>{cat[number].name}</h2>
-          <ul>
-            <li>Attack: {cat[number].other_pets_friendly}</li>
-            <li>Power: {cat[number].intelligence}</li>
-            <li>
-              Defense:{" "}
-              {Math.floor(
-                (cat[number].max_weight + cat[number].min_weight) / 2
+      <div className="user-cat">
+        <section className="slide-container">
+          {" "}
+          <h1 className="user-cat-name">Choose your Cat :</h1>
+          <h1 className="user-cat-name">{cat[number].name}</h1>
+          <div className="usercat-select-container">
+            <div>
+              {" "}
+              {isSelected ? null : (
+                <button className="prev-btn" type="button" onClick={prevCat}>
+                  &#171;
+                </button>
               )}
-            </li>
-            <li>Health: {cat[number].max_life_expectancy}</li>
-            <li>Vitality: {cat[number].min_life_expectancy}</li>
-            <li>Luck: {cat[number].playfulness}</li>
-          </ul>
+            </div>
+            <img
+              className="usercat-img-select"
+              src={cat[number].image_link}
+              alt={cat[number].name}
+            />
+            <div>
+              {isSelected ? null : (
+                <button className="next-btn" type="button" onClick={nextCat}>
+                  &#187;
+                </button>
+              )}
+            </div>
+          </div>
+        </section>
+        <section className="stats-container">
+          {" "}
+          <section className="user-stats">
+            <h2>Stats</h2>
+            <p>
+              Attack: {cat[number].other_pets_friendly * 7}-
+              {cat[number].other_pets_friendly * 10}
+            </p>
+            <p>
+              Magic: {cat[number].intelligence * 7}-
+              {cat[number].intelligence * 10}
+            </p>
+            <p>
+              Defense: {cat[number].min_weight}-{cat[number].max_weight}
+            </p>
+            <p>
+              Recovery:{" "}
+              {Math.floor(
+                (cat[number].min_life_expectancy * cat[number].playfulness) / 2
+              )}
+            </p>
+            <p>Health Point: {cat[number].max_life_expectancy * 10}</p>
+          </section>
         </section>
       </div>
     )
