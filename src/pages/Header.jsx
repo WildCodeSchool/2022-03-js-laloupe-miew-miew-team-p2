@@ -78,7 +78,7 @@ export default function Header() {
       <div
         // className="phone"
         // style={{ display: phoneDisplay ? "flex" : "none" }}
-        className={phoneDisplay ? "phone phoneAppear" : "phone phoneDisappear"}
+        className={phoneDisplay ? "phone phoneDisappear" : "phone phoneAppear"}
         onScroll={scrollFunction}
       >
         <input
