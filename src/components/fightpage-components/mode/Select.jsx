@@ -7,7 +7,6 @@ const Select = ({
   isSelected,
   setIsSelected,
   onStartClick,
-  catImage,
 }) => {
   return (
     <div className="select">
@@ -16,7 +15,6 @@ const Select = ({
         number={number}
         setNumber={setNumber}
         isSelected={isSelected}
-        catImage={catImage}
       />
       <div className="isselected-container">
         <div>

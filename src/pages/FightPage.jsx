@@ -5,7 +5,6 @@ import "./sass/fightpage.scss";
 import Select from "../components/fightpage-components/mode/Select";
 import Battle from "../components/fightpage-components/mode/Battle";
 import Result from "../components/fightpage-components/mode/Result";
-import catImage from "../components/fightpage-components/components/catImage";
 
 const FightPage = () => {
   const [mode, setMode] = useState("Select");
@@ -42,7 +41,6 @@ const FightPage = () => {
           isSelected={isSelected}
           setIsSelected={setIsSelected}
           onStartClick={() => setMode("Battle")}
-          catImage={catImage}
         />
       )}
       {mode === "Battle" && (
@@ -55,7 +53,6 @@ const FightPage = () => {
             setWinner(winner);
             setMode("Result");
           }}
-          catImage={catImage}
         />
       )}
       {mode === "Result" && (
