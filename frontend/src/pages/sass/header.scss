@@ -187,10 +187,18 @@ label {
     font-family: "Nosifer";
     transition: 1s;
     display: unset;
-  }
-  .navigation--title:hover {
-    color: $color-red;
-    transition: 1s;
+
+    &:hover {
+      color: $color-red;
+      transition: 1s;
+    }
+
+    &.active {
+      color: white;
+      text-shadow: 0 0 5px $color-red, 0 0 10px $color-red, 0 0 15px $color-red,
+        0 0 20px $color-red, 0 0 30px $color-red, 0 0 40px $color-red,
+        0 0 55px $color-red, 0 0 75px $color-red;
+    }
   }
   .resize--logo {
     display: none;
