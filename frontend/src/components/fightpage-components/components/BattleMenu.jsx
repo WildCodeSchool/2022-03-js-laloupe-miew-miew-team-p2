@@ -3,17 +3,17 @@ export default function BattleMenu({ onAttack, onSpecial, onHeal, turn }) {
     <div>
       {turn === 0 ? (
         <button type="button" onClick={onAttack}>
-          Attack
+          Claw Strike
         </button>
       ) : null}
       {turn === 0 ? (
         <button type="button" onClick={onSpecial}>
-          Special
+          Meowch
         </button>
       ) : null}
       {turn === 0 ? (
         <button type="button" onClick={onHeal}>
-          Heal
+          Felintion
         </button>
       ) : null}
     </div>
