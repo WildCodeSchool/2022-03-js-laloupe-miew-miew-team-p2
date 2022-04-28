@@ -15,6 +15,7 @@ export default function Contact() {
       <h2>Lets us improve the cat fight experience</h2>
       <h3>Name :</h3>
       <input
+        className="my_inpput"
         id="fullName"
         type="text"
         value={fullName}
