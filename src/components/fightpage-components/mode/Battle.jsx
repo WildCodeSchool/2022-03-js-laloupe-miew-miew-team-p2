@@ -189,14 +189,14 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
 
   return (
     <div className="battle">
-      <h1 className="user-cat-name">{userCat.name}</h1>
+      <h1 className="user-cat-name">Opponent</h1>
       <img
-        className="usercat-img-battle"
-        src={cat[number].image_link}
-        alt="user cat"
+        className="opponentcat-img-battle"
+        src={cat[rdmNumber].image_link}
+        alt="opponent cat"
       />
       <h2>
-        <strong>{userHealth}</strong>
+        <strong>{opponentHealth}</strong>
       </h2>
       <BattleMenu
         turn={turn}
@@ -207,14 +207,14 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
       <BattleAnnouncer
         message={announcerMessage || "What will your cat do ?"}
       />
-      <h1 className="user-cat-name">{opponentCat.name}</h1>
+      <h1 className="user-cat-name">Player</h1>
       <img
-        className="opponentcat-img-battle"
-        src={cat[rdmNumber].image_link}
-        alt="opponent cat"
+        className="usercat-img-battle"
+        src={cat[number].image_link}
+        alt="user cat"
       />
       <h2>
-        <strong>{opponentHealth}</strong>
+        <strong>{userHealth}</strong>
       </h2>
     </div>
   );
