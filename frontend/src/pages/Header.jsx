@@ -82,6 +82,7 @@ export default function Header() {
         onScroll={scrollFunction}
       >
         <input
+          className="my-input--header"
           type="radio"
           name="s"
           id="s1"
@@ -89,6 +90,7 @@ export default function Header() {
           checked={location.pathname === "/content/meow" ? "checked" : null}
         />
         <input
+          className="my-input--header"
           type="radio"
           name="s"
           id="s2"
@@ -98,6 +100,7 @@ export default function Header() {
           }
         />
         <input
+          className="my-input--header"
           type="radio"
           name="s"
           id="s3"
