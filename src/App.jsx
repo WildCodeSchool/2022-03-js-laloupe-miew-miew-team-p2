@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
-    }, 3000);
+    }, 1500);
   }, []);
 
   return loader ? (
@@ -27,6 +27,7 @@ function App() {
         <Route path="content" element={<Layout />}>
           <Route path="fightpage" element={<FightPage />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="contact" element={<h1>Contact page</h1>} />
           <Route path="meow" element={<h1>Meow Who ?</h1>} />
         </Route>
       </Routes>
