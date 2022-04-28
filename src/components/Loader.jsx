@@ -1,20 +1,14 @@
 import "../pages/sass/loader.scss";
+import Load from "../assets/loader.gif";
 
 export default function Loader() {
   return (
-    <section className="loader--container">
-      <div id="container">
-        <div id="square" className="shimmer" />
-        <div id="content">
-          <div id="title" className="shimmer" />
-          <div id="desc">
-            <div className="line shimmer" />
-            <div className="line shimmer" />
-            <div className="line shimmer" />
-            <div className="line shimmer" />
-          </div>
-        </div>
-      </div>
-    </section>
+    <div>
+      <section className="loader--container">
+        <img src={Load} alt="Loader" className="loader-size" />
+        <p>Developped by</p>
+        <p>Meow Team</p>
+      </section>
+    </div>
   );
 }
