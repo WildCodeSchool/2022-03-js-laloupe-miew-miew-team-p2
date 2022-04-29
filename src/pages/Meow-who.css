@@ -1,7 +1,5 @@
 /* essais card */
-body {
-  background-color: #00030e;
-}
+
 .card {
   /* flex: 1 0 25%; */
   min-width: 260px;
@@ -16,7 +14,9 @@ body {
   box-sizing: border-box;
 }
 
-img {
+.image-chat {
+  transform: translateY(-5px);
+  box-shadow: 5px -5px 20px 3px hsl(0, 73%, 39%);
   width: 100%;
   height: 254px;
   object-fit: cover;
@@ -26,11 +26,6 @@ img {
   border-radius: 50px;
   box-shadow: 0 8px 1px rgba(255, 255, 255, 0.1),
     0 16px 1px rgba(255, 255, 255, 0.05);
-}
-
-.image-chat {
-  transform: translateY(-5px);
-  box-shadow: 5px -5px 20px 3px hsl(0, 73%, 39%);
 }
 
 /* 
@@ -55,19 +50,15 @@ original: */
   justify-content: center;
 }
 
-h1 {
-  text-align: center;
-  color: rgb(192, 50, 64);
-}
 .cat-name,
 .cat-details {
   text-align: center;
   color: rgb(252, 248, 248);
   margin: 0;
 }
-.div {
+/* .div {
   background-color: #00030e;
-}
+} */
 .details {
   box-sizing: border-box;
   display: flex;
@@ -108,14 +99,14 @@ h1 {
 .sous-title-meow-page {
   text-align: center;
   color: #ed1342;
-  background-color: #00030e;
+
   margin: 0px;
   padding: 30px;
 }
 .title-meow-page {
   text-align: center;
   color: #ed1342;
-  background-color: #00030e;
+
   margin: 0px;
 }
 .search {
@@ -129,7 +120,6 @@ h1 {
   color: #ed1342;
 }
 .meowwho-page {
-  background-color: #00030e;
   color: #ed1342;
 }
 #name-filter {
