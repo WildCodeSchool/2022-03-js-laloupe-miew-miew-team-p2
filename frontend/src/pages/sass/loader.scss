@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+
+.loader--container {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p:nth-child(2) {
+    position: absolute;
+    bottom: 20%;
+    font-size: 3em;
+    font-family: "Shadows Into Light", sans-serif;
+  }
+  p:nth-child(3) {
+    position: absolute;
+    bottom: 10%;
+    font-size: 3em;
+    font-family: "Shadows Into Light", sans-serif;
+  }
+}
+.loader-size {
+  height: 300px;
+}
