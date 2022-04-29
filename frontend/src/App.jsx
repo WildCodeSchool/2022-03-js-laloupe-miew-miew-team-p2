@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Layout from "./components/Layout";
 import Loader from "@components/Loader";
+import MeowWho from "@pages/Meow-who";
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -27,7 +28,7 @@ function App() {
         <Route path="content" element={<Layout />}>
           <Route path="fightpage" element={<FightPage />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="meow" element={<h1>Meow Who ?</h1>} />
+          <Route path="meow" element={<MeowWho />} />
         </Route>
       </Routes>
     </div>
