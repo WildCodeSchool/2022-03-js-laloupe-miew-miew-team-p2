@@ -8,9 +8,9 @@ $background: #2c2f33;
 body {
   background-color: $background;
 }
+
 //Fightpage
 .fight-container {
-  background: $black;
   color: #fff;
   width: 100%;
   height: 100%;
@@ -18,6 +18,7 @@ body {
   display: block;
   box-sizing: border-box;
 }
+
 //Select component
 .select {
   //
@@ -73,16 +74,17 @@ body {
     color: black;
   }
 }
+
 //UserCat component
 
 .slide {
   opacity: 0;
-  // transition: 1s ;
+  transition: 0.7s ;
   transform: scale(0.6);
 }
 .slide.active {
   opacity: 1;
-  transition: 1s ease-in-out;
+  transition: 0.5 ease-in-out;
   transform: scale(1);
 }
 
@@ -151,19 +153,4 @@ body {
   cursor: pointer;
   padding: 0px 5px 5px 5px;
   background-color: $black;
-}
-
-
-//Battle component
-.battle {
-  width: 100%;
-  height: 100%;
-}
-.usercat-img-battle {
-  width: 400px;
-  height: 250px;
-}
-.opponentcat-img-battle {
-  width: 400px;
-  height: 250px;
 }

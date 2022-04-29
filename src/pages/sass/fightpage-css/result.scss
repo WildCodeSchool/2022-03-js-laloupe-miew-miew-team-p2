@@ -1,0 +1,32 @@
+$black: #2c2f33;
+$white: #f6f6f6;
+$red: #d6204b;
+$red2: rgb(204, 60, 60);
+$grey: #c4c4c4;
+$background: #2c2f33;
+
+.play-again-btn {
+    text-align: center;
+    background-color: $red2;
+    font-family: "Nosifer", sans-serif;
+    font-size: 1.4em;
+    transition: 0.5s ease-in-out;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 2px 2px 5px 2px $black;
+    color: $white;
+    cursor: pointer;
+    padding: 0.3rem 0.8rem;
+    margin: 1rem;
+    box-shadow: 2px 2px 5px 2px black;
+    &:hover {
+      transition: 0.5s ease-in-out;
+      color: black;
+    }
+}
+.result {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
