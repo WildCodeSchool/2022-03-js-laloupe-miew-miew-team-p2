@@ -7,7 +7,7 @@ body {
   min-width: 260px;
   max-width: 280px;
   /* height: 200px; */
-  background: #00030e;
+  /* background: #00030e; */
   border-radius: 35px;
   margin: 5px;
   padding: 26px 15px 30px;
@@ -26,6 +26,11 @@ img {
   border-radius: 50px;
   box-shadow: 0 8px 1px rgba(255, 255, 255, 0.1),
     0 16px 1px rgba(255, 255, 255, 0.05);
+}
+
+.image-chat {
+  transform: translateY(-5px);
+  box-shadow: 5px -5px 20px 3px hsl(0, 73%, 39%);
 }
 
 /* 
@@ -54,9 +59,10 @@ h1 {
   text-align: center;
   color: rgb(192, 50, 64);
 }
-h2 {
+.cat-name,
+.cat-details {
   text-align: center;
-  color: rgb(192, 50, 64);
+  color: rgb(252, 248, 248);
   margin: 0;
 }
 .div {
@@ -128,7 +134,7 @@ h2 {
 }
 #name-filter {
   -webkit-box-shadow: 5px 10px 32px 12px rgba(231, 29, 68, 0.94);
-  box-shadow: 5px 10px 32px 12px rgba(231, 29, 68, 0.4);
+  box-shadow: 5px 10px 32px 12px rgba(248, 246, 246, 0.4);
   border-radius: 20px;
   margin: 20px auto;
   color: rgb(137, 128, 128);
