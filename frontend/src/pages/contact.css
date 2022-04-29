@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+.my-form {
+  font-size: 1rem;
+  color: rgb(204, 60, 60);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: content-box;
+  width: 100%;
+}
+.my-label {
+  justify-content: center;
+  display: flex;
+  font-weight: 400;
+  font-size: 1.1em;
+  font-family: "Nosifer", sans-serif;
+  color: rgb(204, 60, 60);
+}
+.my-title {
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  display: flex;
+  font-weight: 400;
+  font-size: 1.6em;
+  font-family: "Shadows Into Light", sans-serif;
+  color: white;
+}
+.input-contact {
+  width: 90%;
+  height: 50px;
+  position: relative;
+  border-radius: 20px;
+  margin: 0px auto;
+  padding: 0px;
+}
+.input-contact::placeholder {
+  font-size: 1em;
+  text-align: center;
+  font-family: "Cochin", sans-serif;
+  padding-top: 10px;
+  color: #23272a;
+}
+.textarea-contact {
+  height: 150px;
+  border-radius: 20px;
+  font-size: 1em;
+  padding-top: 20px;
+  color: #23272a;
+  resize: none;
+  width: 90%;
+}
+.textarea-contact::placeholder {
+  font-size: 1em;
+  font-family: "Cochin", sans-serif;
+  text-align: center;
+  padding-top: 10px;
+  color: #23272a;
+}
+#btn {
+  font-family: "Nosifer", sans-serif;
+  margin-top: 2rem;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(204, 60, 60);
+  height: 50px;
+  width: 70%;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 1s;
+}
+#btn:hover {
+  background-color: #23272a;
+  color: rgb(204, 60, 60);
+  transition: 1s;
+}

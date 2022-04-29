@@ -1,44 +1,35 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import "./sass/header.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import IconCat from "../assets/chat.png";
 import IconContact from "../assets/email.png";
 import IconBook from "../assets/livre-ouvert.png";
+import Burger from "../assets/burger-bar.png";
 
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const [phoneDisplay, setPhoneDisplay] = useState(true);
 
-  let scrollPosition = window.scrollY;
-
-  const scrollFunction = () => {
-    const newScrollPosition = window.scrollY;
-
-    if (newScrollPosition < scrollPosition) {
-      setPhoneDisplay(true);
-    } else {
-      setPhoneDisplay(false);
-    }
-    scrollPosition = newScrollPosition;
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      scrollFunction();
-    });
-
-    return () => {
-      window.removeEventListener("scroll", () => {
-        scrollFunction();
-      });
-    };
-  }, []);
-
   return (
     <nav className="navigation">
+      <div
+        // className="circle-white"
+        onClick={() => setPhoneDisplay(!phoneDisplay)}
+        className={
+          phoneDisplay
+            ? "circle-white phoneAppear"
+            : "circle-white phoneDisappear"
+        }
+      >
+        <div className="point">
+          <img src={Burger} alt="Burger icon" className="resize-burger" />
+        </div>
+      </div>
       <NavLink to="/">
         <h1>CAT FIGHT</h1>
       </NavLink>
@@ -79,29 +70,40 @@ export default function Header() {
         // className="phone"
         // style={{ display: phoneDisplay ? "flex" : "none" }}
         className={phoneDisplay ? "phone phoneDisappear" : "phone phoneAppear"}
-        onScroll={scrollFunction}
       >
         <input
+          className="my-input--header"
           type="radio"
           name="s"
           id="s1"
-          onChange={() => navigate("/content/meow")}
+          onChange={() => {
+            setTimeout(() => setPhoneDisplay(true), 1000);
+            navigate("/content/meow");
+          }}
           checked={location.pathname === "/content/meow" ? "checked" : null}
         />
         <input
+          className="my-input--header"
           type="radio"
           name="s"
           id="s2"
-          onChange={() => navigate("/content/fightpage")}
+          onChange={() => {
+            setTimeout(() => setPhoneDisplay(true), 1000);
+            navigate("/content/fightpage");
+          }}
           checked={
             location.pathname === "/content/fightpage" ? "checked" : null
           }
         />
         <input
+          className="my-input--header"
           type="radio"
           name="s"
           id="s3"
-          onChange={() => navigate("/content/contact")}
+          onChange={() => {
+            setTimeout(() => setPhoneDisplay(true), 1000);
+            navigate("/content/contact");
+          }}
           checked={location.pathname === "/content/contact" ? "checked" : null}
         />
         <label htmlFor="s1">
