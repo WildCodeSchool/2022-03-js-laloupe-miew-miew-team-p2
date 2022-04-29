@@ -4,8 +4,9 @@ import BattleAnnouncer from "../components/BattleAnnouncer";
 import BattleMenu from "../components/BattleMenu";
 import wait from "../components/waitFunction";
 import useOpponentChoice from "../components/useOpponentChoice";
+import "../../../pages/sass/fightpage-css/battle.scss";
 
-export default function Battle({ cat, number, rdmNumber, onResult, catImage }) {
+export default function Battle({ cat, number, rdmNumber, onResult }) {
   const userCat = {
     name: "Your cat",
     image: cat[number].image_link,
@@ -35,14 +36,14 @@ export default function Battle({ cat, number, rdmNumber, onResult, catImage }) {
 
   const attack = ({ attacker, receiver }) => {
     const finalDamage =
-      attacker.attack * getRdmNmb(7, 10) -
+      attacker.attack * getRdmNmb(6, 11) -
       getRdmNmb(receiver.defenseMin, receiver.defenseMax);
     return finalDamage;
   };
 
   const special = ({ attacker, receiver }) => {
     const finalDamage =
-      attacker.special * getRdmNmb(7, 10) -
+      attacker.special * getRdmNmb(6, 11) -
       getRdmNmb(receiver.defenseMin, receiver.defenseMax);
     return finalDamage;
   };
@@ -73,11 +74,22 @@ export default function Battle({ cat, number, rdmNumber, onResult, catImage }) {
 
             (async () => {
               setInSequence(true);
-              setAnnouncerMessage(`${attacker.name} has chosen to attack !`);
+              setAnnouncerMessage(`⚔️ ${attacker.name} is attacking !`);
 
               await wait(2000);
 
-              setAnnouncerMessage(`${receiver.name} felt that !`);
+              if (damage <= 0) {
+                setAnnouncerMessage(`${attacker.name} missed !!`);
+              } else if (damage < 10) {
+                setAnnouncerMessage(`That's not very effective...`);
+              } else if (damage >= 35) {
+                setAnnouncerMessage(
+                  `${attacker.name} perform a critical hit !!`
+                );
+              } else {
+                setAnnouncerMessage(`${receiver.name} felt that !`);
+              }
+
               if (turn === 0) {
                 setOpponentHealth((h) => (h - damage > 0 ? h - damage : 0));
               } else {
@@ -99,11 +111,22 @@ export default function Battle({ cat, number, rdmNumber, onResult, catImage }) {
 
             (async () => {
               setInSequence(true);
-              setAnnouncerMessage(`${attacker.name} uses a special attack !`);
+              setAnnouncerMessage(`🪄 ${attacker.name} uses a special skill !`);
 
               await wait(2000);
 
-              setAnnouncerMessage(`${receiver.name} felt that !`);
+              if (damage <= 0) {
+                setAnnouncerMessage(`${attacker.name} missed !!`);
+              } else if (damage < 10) {
+                setAnnouncerMessage(`That's not very effective...`);
+              } else if (damage >= 35) {
+                setAnnouncerMessage(
+                  `${attacker.name} perform a critical hit !!`
+                );
+              } else {
+                setAnnouncerMessage(`${receiver.name} felt that !`);
+              }
+
               if (turn === 0) {
                 setOpponentHealth((h) => (h - damage > 0 ? h - damage : 0));
               } else {
@@ -125,11 +148,19 @@ export default function Battle({ cat, number, rdmNumber, onResult, catImage }) {
 
             (async () => {
               setInSequence(true);
-              setAnnouncerMessage(`${attacker.name} is healing himself !`);
+              setAnnouncerMessage(
+                `🧪 ${attacker.name} is trying to heal himself !`
+              );
 
               await wait(2000);
 
-              setAnnouncerMessage(`${attacker.name} has recovered health.`);
+              if (recovered > 0) {
+                setAnnouncerMessage(`${attacker.name} has recovered health !`);
+              } else {
+                setAnnouncerMessage(
+                  `${attacker.name} failed to heal himself...`
+                );
+              }
               if (turn === 0) {
                 setUserHealth((h) =>
                   h + recovered <= attacker.health
@@ -189,33 +220,41 @@ export default function Battle({ cat, number, rdmNumber, onResult, catImage }) {
 
   return (
     <div className="battle">
-      <h1 className="user-cat-name">{userCat.name}</h1>
-      <img
-        className="usercat-img-battle"
-        src={catImage[number]}
-        alt="user cat"
-      />
-      <h2>
-        <strong>{userHealth}</strong>
-      </h2>
-      <BattleMenu
-        turn={turn}
-        onAttack={() => setSequence({ turn, mode: "attack" })}
-        onSpecial={() => setSequence({ turn, mode: "special" })}
-        onHeal={() => setSequence({ turn, mode: "heal" })}
-      />
+      <div className="opponent-menu">
+        <h2 className="opponent-health-point">{opponentHealth}❤️</h2>
+        <div>
+          {" "}
+          <img
+            className="opponent-img-battle"
+            src={cat[rdmNumber].image_link}
+            alt="opponent cat"
+          />
+          <h1 className="opponent-name">Opponent</h1>
+        </div>
+      </div>
+
       <BattleAnnouncer
-        message={announcerMessage || "What will your cat do ?"}
+        message={announcerMessage || "It's your turn to play."}
       />
-      <h1 className="user-cat-name">{opponentCat.name}</h1>
-      <img
-        className="opponentcat-img-battle"
-        src={catImage[rdmNumber]}
-        alt="opponent cat"
-      />
-      <h2>
-        <strong>{opponentHealth}</strong>
-      </h2>
+      <div className="player-menu">
+        <div>
+          <h1 className="player-name">Player</h1>
+          <img
+            className="player-img-battle"
+            src={cat[number].image_link}
+            alt="user cat"
+          />
+        </div>
+        <div className="player-stats">
+          <h2 className="player-health-point">{userHealth}❤️</h2>
+          <BattleMenu
+            turn={turn}
+            onAttack={() => setSequence({ turn, mode: "attack" })}
+            onSpecial={() => setSequence({ turn, mode: "special" })}
+            onHeal={() => setSequence({ turn, mode: "heal" })}
+          />
+        </div>
+      </div>
     </div>
   );
 }

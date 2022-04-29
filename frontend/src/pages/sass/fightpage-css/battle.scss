@@ -1,0 +1,113 @@
+$black: #2c2f33;
+$white: #f6f6f6;
+$red: #d6204b;
+$red2: rgb(204, 60, 60);
+$grey: #c4c4c4;
+$background: #2c2f33;
+
+body {
+  background-color: $background;
+}
+
+//Battle Component
+.battle {
+  // width: 100%;
+  // height: 100%;
+  margin: 0.5rem;
+}
+
+.opponent-menu {
+  display: flex;
+  padding-top: 1rem;
+}
+.opponent-name {
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+.player-health-point {
+    margin: auto;
+    text-align: center;
+}
+.opponent-health-point {
+  margin: auto;
+  text-align: center;
+}
+.opponent-img-battle {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.player-menu {
+    display: flex;
+    // align-items: center;
+}
+.player-name {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.player-img-battle {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.player-stats {
+    margin: 20px;
+    width: 100%;
+    display:flex ; 
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+//BattleMenu component
+.battle-menu {
+    margin: auto;
+    display:flex ; 
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+.skills-btn {
+    text-align: center;
+    background-color: $red2;
+    font-family: "Nosifer", sans-serif;
+    transition: 0.5s ease-in-out;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 2px 2px 5px 2px black;
+    color: $white;
+    cursor: pointer;
+    padding: 0.3rem 0.8rem;
+  
+    &:hover {
+      transition: 0.5s ease-in-out;
+      color: black;
+    }
+}
+
+//BattleAnnoncer component
+
+.battle-annoncer {
+    height: 50px;
+    margin: 20px 20px;
+    font-size: 1.2rem;
+    background-color: $red2;
+    transition: 0.5s ease-in-out;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 2px 2px 5px 2px black;
+    color: $white;
+    cursor: pointer;
+    padding: 0.3rem 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.battle-annoncer-text {
+  text-align: center;
+}
