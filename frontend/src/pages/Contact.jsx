@@ -1,5 +1,7 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-alert */
+import Footer from "@components/Footer";
 import React, { useState } from "react";
 import "./contact.css";
 
@@ -56,6 +58,7 @@ export default function Contact() {
       <button id="btn" type="submit">
         SUBMIT
       </button>
+      <Footer />
     </form>
   );
 }
