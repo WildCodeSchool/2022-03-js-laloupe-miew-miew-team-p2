@@ -1,6 +1,6 @@
 /* eslint-disable import/order */
 /* eslint-disable import/no-unresolved */
-import "@pages/sass/app.scss";
+import "./pages/sass/app.scss";
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import FightPage from "./pages/FightPage";
