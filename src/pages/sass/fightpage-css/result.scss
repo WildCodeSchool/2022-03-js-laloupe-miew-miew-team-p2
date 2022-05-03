@@ -30,3 +30,16 @@ $background: #2c2f33;
     flex-direction: column;
     align-items: center;
 }
+.winner-img {
+  width: 80%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px; 
+}
+
+
+@media screen and (min-width: 750px) {
+  .winner-img {
+    width: 600px
+  }
+}
