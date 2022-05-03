@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 // eslint-disable-next-line import/no-unresolved
 import CatsCard from "@components/CatsCard";
 import { useState, useEffect } from "react";

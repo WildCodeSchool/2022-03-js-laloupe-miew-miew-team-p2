@@ -14,10 +14,10 @@ $color-shadow: rgba(0, 0, 0, 0.25);
 .footer--text {
   display: none;
 }
-@media screen and (min-width: 500px) {
+@media only screen and (min-width: 500px) {
   .footer--background {
     position: absolute;
-    bottom: -50%;
+    bottom: -15%;
     background-color: $color-black;
     color: white;
     display: flex;
@@ -37,8 +37,8 @@ $color-shadow: rgba(0, 0, 0, 0.25);
     align-items: center;
     flex-direction: column;
     transition: 1s;
-    font-family: "Nosifer", sans-serif;
-    font-size: 0.8rem;
+    font-family: "Shadows Into Light", sans-serif;
+    font-size: 1.5em;
 
     p {
       margin-top: 5px;

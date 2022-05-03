@@ -1,6 +1,7 @@
 /* eslint-disable no-shadow */
 import { useEffect, useState } from "react";
 import axios from "axios";
+// eslint-disable-next-line import/no-unresolved
 import Select from "../components/fightpage-components/mode/Select";
 import Battle from "../components/fightpage-components/mode/Battle";
 import Result from "../components/fightpage-components/mode/Result";
