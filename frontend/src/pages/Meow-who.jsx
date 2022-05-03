@@ -4,7 +4,6 @@ import CatsCard from "@components/CatsCard";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Meow-who.css";
-import Footer from "@components/Footer";
 
 export default function MeowWho() {
   const [arrayCat, setArrayCat] = useState([]);
@@ -69,7 +68,6 @@ export default function MeowWho() {
             .map((cat) => {
               return <CatsCard key={cat.name} cat={cat} />;
             })}
-        <Footer />
       </section>
     </div>
   );
