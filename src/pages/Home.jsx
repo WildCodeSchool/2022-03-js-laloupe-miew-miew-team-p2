@@ -8,7 +8,10 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/griffe.png";
 
 export default function Home() {
-  const audio = new Audio("https://www.mboxdrive.com/roar.mp3");
+  // const audio = new Audio("https://www.mboxdrive.com/roar.mp3");
+  const audio = new Audio(
+    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/menuclick.wav"
+  );
   const start = () => {
     audio.play();
   };
