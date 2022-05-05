@@ -35,16 +35,18 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
   }
 
   const attack = ({ attacker, receiver }) => {
-    const finalDamage =
-      attacker.attack * getRdmNmb(5, 10) -
+    const damage =
+      attacker.attack * getRdmNmb(7, 11) -
       getRdmNmb(receiver.defenseMin, receiver.defenseMax);
+    const finalDamage = damage > 0 ? damage : 0;
     return finalDamage;
   };
 
   const special = ({ attacker, receiver }) => {
-    const finalDamage =
-      attacker.special * getRdmNmb(8, 10) -
-      getRdmNmb(receiver.defenseMin, receiver.defenseMax);
+    const damage =
+      attacker.special * getRdmNmb(11, 13) -
+      Math.floor((receiver.defenseMin + receiver.defenseMax) / 2);
+    const finalDamage = damage > 0 ? damage : 0;
     return finalDamage;
   };
 
@@ -142,9 +144,9 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
               setAnnouncerMessage(`Now it's ${receiver.name}'s turn !`);
 
               if (turn === 0) {
-                setPlayerSpecialCD(3);
+                setPlayerSpecialCD(4);
               } else {
-                setOpponentSpecialCD(2);
+                setOpponentSpecialCD(3);
               }
 
               await wait(1500);
@@ -190,9 +192,9 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
               setAnnouncerMessage(`Now it's ${receiver.name}'s turn !`);
 
               if (turn === 0) {
-                setPlayerHealCD(2);
+                setPlayerHealCD(3);
               } else {
-                setOpponentHealCD(1);
+                setOpponentHealCD(2);
               }
 
               await wait(1500);
