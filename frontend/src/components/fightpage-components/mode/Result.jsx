@@ -4,6 +4,13 @@ const Result = ({ winner, onSelectClick }) => {
   return (
     <div className="result">
       <h1 className="winner-name">{winner.name} has won !</h1>
+      <img
+        className={
+          winner.name === "Your cat" ? "winner-img-user" : "winner-img-opponent"
+        }
+        src={winner.image}
+        alt="winner cat"
+      />
       <button type="button" className="play-again-btn" onClick={onSelectClick}>
         Play Again.
       </button>

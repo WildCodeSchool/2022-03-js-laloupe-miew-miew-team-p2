@@ -35,16 +35,18 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
   }
 
   const attack = ({ attacker, receiver }) => {
-    const finalDamage =
-      attacker.attack * getRdmNmb(6, 11) -
+    const damage =
+      attacker.attack * getRdmNmb(7, 11) -
       getRdmNmb(receiver.defenseMin, receiver.defenseMax);
+    const finalDamage = damage > 0 ? damage : 0;
     return finalDamage;
   };
 
   const special = ({ attacker, receiver }) => {
-    const finalDamage =
-      attacker.special * getRdmNmb(6, 11) -
-      getRdmNmb(receiver.defenseMin, receiver.defenseMax);
+    const damage =
+      attacker.special * getRdmNmb(11, 13) -
+      Math.floor((receiver.defenseMin + receiver.defenseMax) / 2);
+    const finalDamage = damage > 0 ? damage : 0;
     return finalDamage;
   };
 
@@ -53,6 +55,11 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
   };
 
   const [sequence, setSequence] = useState({});
+
+  const [playerSpecialCD, setPlayerSpecialCD] = useState(0);
+  const [opponentSpecialCD, setOpponentSpecialCD] = useState(0);
+  const [playerHealCD, setPlayerHealCD] = useState(0);
+  const [opponentHealCD, setOpponentHealCD] = useState(0);
 
   const useBattleSequence = (sequence) => {
     const [turn, setTurn] = useState(0);
@@ -136,6 +143,12 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
 
               setAnnouncerMessage(`Now it's ${receiver.name}'s turn !`);
 
+              if (turn === 0) {
+                setPlayerSpecialCD(4);
+              } else {
+                setOpponentSpecialCD(3);
+              }
+
               await wait(1500);
 
               setTurn(turn === 0 ? 1 : 0);
@@ -177,6 +190,13 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
               await wait(2000);
 
               setAnnouncerMessage(`Now it's ${receiver.name}'s turn !`);
+
+              if (turn === 0) {
+                setPlayerHealCD(3);
+              } else {
+                setOpponentHealCD(2);
+              }
+
               await wait(1500);
 
               setTurn(turn === 0 ? 1 : 0);
@@ -201,7 +221,29 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
   const { turn, inSequence, userHealth, opponentHealth, announcerMessage } =
     useBattleSequence(sequence);
 
-  const opponentChoice = useOpponentChoice(turn);
+  const opponentChoice = useOpponentChoice(
+    turn,
+    opponentSpecialCD,
+    opponentHealCD,
+    opponentHealth,
+    opponentCat
+  );
+
+  useEffect(() => {
+    if (turn === 0) {
+      setPlayerSpecialCD(playerSpecialCD === 0 ? 0 : playerSpecialCD - 1);
+    } else if (turn === 1) {
+      setOpponentSpecialCD(opponentSpecialCD === 0 ? 0 : opponentSpecialCD - 1);
+    }
+  }, [turn]);
+
+  useEffect(() => {
+    if (turn === 0) {
+      setPlayerHealCD(playerHealCD === 0 ? 0 : playerHealCD - 1);
+    } else if (turn === 1) {
+      setOpponentHealCD(opponentHealCD === 0 ? 0 : opponentHealCD - 1);
+    }
+  }, [turn]);
 
   useEffect(() => {
     if (opponentChoice && turn === 1 && !inSequence) {
@@ -221,39 +263,50 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
   return (
     <div className="battle">
       <div className="opponent-menu">
-        <h2 className="opponent-health-point">{opponentHealth}❤️</h2>
-        <div>
+        <div className="opponent-card">
           {" "}
           <img
             className="opponent-img-battle"
             src={cat[rdmNumber].image_link}
             alt="opponent cat"
           />
-          <h1 className="opponent-name">Opponent</h1>
+          <h1 className="opponent-name">Opponent : {opponentHealth}❤️</h1>
         </div>
       </div>
+      <div className="battle-announcer-div">
+        {" "}
+        <BattleAnnouncer
+          message={announcerMessage || "It's your turn to play."}
+        />
+      </div>
 
-      <BattleAnnouncer
-        message={announcerMessage || "It's your turn to play."}
-      />
       <div className="player-menu">
-        <div>
-          <h1 className="player-name">Player</h1>
-          <img
-            className="player-img-battle"
-            src={cat[number].image_link}
-            alt="user cat"
-          />
+        {" "}
+        <div className="player-div">
+          {" "}
+          <div className="player-card">
+            <h1 className="player-name">Player : {userHealth}❤️</h1>
+            <img
+              className="player-img-battle"
+              src={cat[number].image_link}
+              alt="user cat"
+            />
+          </div>
+          <div className="player-stats">
+            <BattleMenu
+              turn={turn}
+              playerSpecialCD={playerSpecialCD}
+              playerHealCD={playerHealCD}
+              inSequence={inSequence}
+              onAttack={() => setSequence({ turn, mode: "attack" })}
+              onSpecial={() => setSequence({ turn, mode: "special" })}
+              onHeal={() => setSequence({ turn, mode: "heal" })}
+            />
+          </div>
         </div>
-        <div className="player-stats">
-          <h2 className="player-health-point">{userHealth}❤️</h2>
-          <BattleMenu
-            turn={turn}
-            onAttack={() => setSequence({ turn, mode: "attack" })}
-            onSpecial={() => setSequence({ turn, mode: "special" })}
-            onHeal={() => setSequence({ turn, mode: "heal" })}
-          />
-        </div>
+      </div>
+      <div className="vs-container">
+        <h1 className="vs-title">VS</h1>
       </div>
     </div>
   );
