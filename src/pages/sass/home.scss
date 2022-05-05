@@ -3,6 +3,7 @@
   scroll-behavior: smooth;
 }
 $color-black: #161616;
+$color-flicker: #1616161a;
 $color-white: #fff;
 $color-red: rgb(204, 60, 60);
 $size: 170px; // (Fully responsive)
@@ -21,10 +22,56 @@ body {
   h1 {
     font-size: 3em;
     font-family: "Nosifer", sans-serif;
-    color: white;
     text-shadow: 0 0 5px $color-red, 0 0 10px $color-red, 0 0 20px $color-red,
       0 0 40px $color-red, 0 0 80px $color-red, 0 0 90px $color-red,
       0 0 100px $color-red, 0 0 150px $color-red;
+    animation: cat-title 2.1ms infinite alternate;
+  }
+}
+@keyframes cat-title {
+  0% {
+    opacity: 1;
+    box-shadow: 0px 0px 17px 6px $color-flicker;
+  }
+  2% {
+    opacity: 0.9;
+    box-shadow: 0px 0px 17px 6px $color-flicker;
+  }
+  8% {
+    opacity: 0.9;
+    box-shadow: 0px 0px 17px 6px $color-flicker;
+  }
+  12% {
+    opacity: 1;
+    box-shadow: 0px 0px 17px 6px $color-flicker;
+  }
+  20% {
+    opacity: 1;
+    box-shadow: 0px 0px 17px 6px $color-flicker;
+  }
+  25% {
+    opacity: 1;
+    box-shadow: 0px 0px 17px 6px $color-flicker;
+  }
+  30% {
+    opacity: 1;
+    box-shadow: 0px 0px 17px 6px $color-flicker;
+  }
+  70% {
+    opacity: 0.9;
+    box-shadow: 0px 0px 17px 6px $color-flicker;
+  }
+  72% {
+    opacity: 1;
+    box-shadow: 0px 0px 17px 6px $color-flicker;
+  }
+  77% {
+    opacity: 0.9;
+    box-shadow: 0px 0px 17px 6px $color-flicker;
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0px 0px 17px 6px $color-flicker;
   }
 }
 .picture--size {
