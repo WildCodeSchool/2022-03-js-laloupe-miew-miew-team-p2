@@ -23,14 +23,14 @@ export default function Home() {
     <header>
       <div id="text" className="title">
         <div className="catfight">
-          <span id="F">C</span>
-          <span id="I">A</span>
-          <span id="G">T</span>
+          <span id="I">C</span>
+          <span id="F">A</span>
+          <span id="I">T</span>
           <span id="F">F</span>
-          <span id="I">I</span>
-          <span id="G">G</span>
+          <span id="T">I</span>
+          <span id="I">G</span>
           <span id="H">H</span>
-          <span id="T">T</span>
+          <span id="I">T</span>
         </div>
         <img src={logo} alt="Griffe de chat" className="picture--size" />
       </div>
