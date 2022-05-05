@@ -22,7 +22,16 @@ export default function Home() {
   return (
     <header>
       <div id="text" className="title">
-        <h1>CAT FIGHT</h1>
+        <div className="catfight">
+          <span id="F">C</span>
+          <span id="I">A</span>
+          <span id="G">T</span>
+          <span id="F">F</span>
+          <span id="I">I</span>
+          <span id="G">G</span>
+          <span id="H">H</span>
+          <span id="T">T</span>
+        </div>
         <img src={logo} alt="Griffe de chat" className="picture--size" />
       </div>
       <div className="cat-placement">
