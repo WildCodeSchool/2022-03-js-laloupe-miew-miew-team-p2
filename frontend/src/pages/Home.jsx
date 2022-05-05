@@ -32,6 +32,8 @@ export default function Home() {
           <span id="H">H</span>
           <span id="I">T</span>
         </div>
+      </div>
+      <div className="position-image-home">
         <img src={logo} alt="Griffe de chat" className="picture--size" />
       </div>
       <div className="cat-placement">
