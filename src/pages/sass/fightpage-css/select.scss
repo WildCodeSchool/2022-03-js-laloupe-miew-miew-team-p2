@@ -79,7 +79,7 @@ body {
 
 .slide {
   opacity: 0;
-  transition: 0.7s ;
+  transition: 0.7s;
   transform: scale(0.6);
 }
 .slide.active {
@@ -103,7 +103,7 @@ body {
   font-size: 1.6rem;
   text-align: center;
   margin: 0.5rem;
-  // font-family: "Nosifer", sans-serif; 
+  // font-family: "Nosifer", sans-serif;
 }
 .user-cat-name {
   font-size: 1.6rem;
@@ -116,6 +116,9 @@ body {
   border-radius: 20px 20px 20px 20px;
   object-fit: cover;
   object-position: center;
+  border: solid 3px $red;
+  box-shadow: 0px 0px 10px 2px $red;
+  z-index: 2;
 }
 .stats-container {
   display: flex;
@@ -150,10 +153,15 @@ body {
   background-color: $black;
 }
 
-
-@media  screen and (min-width: 750px) {
+@media screen and (min-width: 750px) {
   .usercat-img-select {
     width: 400px;
     height: 400px;
   }
+  .next-btn,
+  .prev-btn {
+    margin: 20px;
+    font-size: 120px;
+  }
+  
 }

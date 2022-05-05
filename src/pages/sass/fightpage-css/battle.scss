@@ -42,6 +42,8 @@ body {
   object-fit: cover;
   object-position: center;
   border-radius: 10px;
+  border: solid 3px rgb(80, 42, 194);
+  box-shadow: 0px 0px 10px 2px rgb(80, 42, 194);
 }
 .player-menu {
   display: flex;
@@ -62,6 +64,8 @@ body {
   object-fit: cover;
   object-position: center;
   border-radius: 10px;
+  border: solid 3px $red;
+  box-shadow: 0px 0px 10px 2px $red;
 }
 .player-stats {
   margin: 10px;
@@ -175,9 +179,6 @@ body {
     display: flex;
     justify-content: space-around;
   }
-  .opponent-menu {
-    margin-bottom: 1rem;
-  }
   .battle-annoncer-text {
     font-size: 25px;
   }
@@ -213,16 +214,17 @@ body {
     align-items: center;
   }
   .battle-announcer-div {
-    grid-column: 1 / 5;
+    grid-column: 1 / 4;
     grid-row: 3;
     display: flex;
     align-items: center;
   }
   .opponent-menu {
     grid-row: 3;
-    grid-column: 5;
+    grid-column: 4 / 6;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   .player-card {
     display: flex;
@@ -234,5 +236,8 @@ body {
   }
   .battle-annoncer {
     height: 150px;
+  }
+  .opponent-name {
+    margin-bottom: 0.3rem;
   }
 }
