@@ -5,6 +5,7 @@
 $color-black: #161616;
 $color-flicker: #1616161a;
 $color-white: #fff;
+$color-red-glow: #ff0000;
 $color-red: rgb(204, 60, 60);
 $size: 170px; // (Fully responsive)
 // Remove margin of the agentuserstylesheet body
@@ -30,7 +31,7 @@ body {
     0 0 80px rgb(204, 60, 60), 0 0 90px rgb(204, 60, 60),
     0 0 100px rgb(204, 60, 60), 0 0 150px rgb(204, 60, 60);
   span {
-    padding-left: 15px;
+    padding-left: 10px;
   }
 }
 #I {
@@ -485,14 +486,15 @@ header {
   font-size: 1.8em;
   justify-content: center;
   display: flex;
-  box-shadow: 4px 5px 5px #919191;
-  transition: 0.5s ease-in-out;
+  transition: 1s ease-in-out;
   cursor: pointer;
   width: 350px;
+  filter: drop-shadow(0px 0px 10px #4535c8);
+  animation: glow 8s linear infinite;
 
   &:hover {
     border-radius: 20px;
-    transition: 0.5s ease-in-out;
+    transition: 1s ease-in-out;
     color: rgb(204, 60, 60);
   }
 }
@@ -500,12 +502,65 @@ a {
   text-decoration: none;
   color: $color-black;
 }
-
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 1rem $color-white);
+  }
+  10% {
+    filter: drop-shadow(0 0 1rem $color-white);
+  }
+  15% {
+    filter: drop-shadow(0 0 1rem $color-red-glow);
+  }
+  20% {
+    filter: drop-shadow(0 0 1rem $color-red-glow);
+  }
+  30% {
+    filter: drop-shadow(0 0 1rem $color-red-glow);
+  }
+  35% {
+    filter: drop-shadow(0 0 1rem $color-white);
+  }
+  40% {
+    filter: drop-shadow(0 0 1rem $color-white);
+  }
+  50% {
+    filter: drop-shadow(0 0 1rem $color-white);
+  }
+  55% {
+    filter: drop-shadow(0 0 1rem $color-red-glow);
+  }
+  60% {
+    filter: drop-shadow(0 0 1rem $color-red-glow);
+  }
+  70% {
+    filter: drop-shadow(0 0 1rem $color-red-glow);
+  }
+  75% {
+    filter: drop-shadow(0 0 1rem $color-white);
+  }
+  80% {
+    filter: drop-shadow(0 0 1rem $color-white);
+  }
+  90% {
+    filter: drop-shadow(0 0 1rem $color-white);
+  }
+  95% {
+    filter: drop-shadow(0 0 1rem $color-red-glow);
+  }
+  100% {
+    filter: drop-shadow(0 0 1rem $color-red-glow);
+  }
+}
 @media screen and (min-width: 500px) {
   .picture--size {
     top: 9%;
   }
   .catfight {
     font-size: 3rem;
+
+    span {
+      padding-left: 15px;
+    }
   }
 }
