@@ -8,7 +8,10 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/griffe.png";
 
 export default function Home() {
-  const audio = new Audio("https://www.mboxdrive.com/roar.mp3");
+  // const audio = new Audio("https://www.mboxdrive.com/roar.mp3");
+  const audio = new Audio(
+    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/menuclick.wav"
+  );
   const start = () => {
     audio.play();
   };
@@ -19,7 +22,16 @@ export default function Home() {
   return (
     <header>
       <div id="text" className="title">
-        <h1>CAT FIGHT</h1>
+        <div className="catfight">
+          <span id="I">C</span>
+          <span id="F">A</span>
+          <span id="I">T</span>
+          <span id="F">F</span>
+          <span id="T">I</span>
+          <span id="I">G</span>
+          <span id="H">H</span>
+          <span id="I">T</span>
+        </div>
         <img src={logo} alt="Griffe de chat" className="picture--size" />
       </div>
       <div className="cat-placement">
