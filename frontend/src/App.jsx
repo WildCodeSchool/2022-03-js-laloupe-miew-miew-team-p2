@@ -24,8 +24,8 @@ function App() {
   ) : (
     <div className="app">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="content" element={<Layout />}>
+        <Route path={`${import.meta.env.BASE_URL}/`} element={<Home />} />
+        <Route path={`${import.meta.env.BASE_URL}content`} element={<Layout />}>
           <Route path="fightpage" element={<FightPage />} />
           <Route path="contact" element={<Contact />} />
           <Route path="meow" element={<MeowWho />} />
