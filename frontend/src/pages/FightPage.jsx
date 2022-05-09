@@ -32,31 +32,6 @@ const FightPage = () => {
       });
   };
 
-  // Add Cat //
-  const [newCatName, setNewCatName] = useState("");
-  const [newImageLink, setNewImageLink] = useState("");
-  const newCat = [
-    {
-      name: newCatName,
-      image_link: newImageLink,
-      other_pets_friendly: getRandomNumber(4, 5),
-      intelligence: getRandomNumber(4, 5),
-      min_weight: getRandomNumber(7, 15),
-      max_weight: getRandomNumber(17, 30),
-      min_life_expectancy: getRandomNumber(9, 17),
-      max_life_expectancy: getRandomNumber(14, 20),
-      playfulness: getRandomNumber(3, 5),
-    },
-  ];
-  const createCat = () => {
-    if (newCatName !== "" && newImageLink !== "") {
-      newCat.map((cat) => customCat.push(cat));
-      setNewImageLink("");
-      setNewCatName("");
-      localStorage.setItem("customCat", JSON.stringify(customCat));
-    }
-  };
-
   useEffect(() => {
     getCat();
     setCustomCat(JSON.parse(localStorage.getItem("customCat")) || []);
@@ -85,7 +60,6 @@ const FightPage = () => {
       {mode === "CustomSelect" && (
         <CustomSelect
           customCat={customCat}
-          createCat={createCat}
           cat={cat}
           setCat={setCat}
           number={number}
@@ -94,10 +68,6 @@ const FightPage = () => {
           setIsSelected={setIsSelected}
           setMode={setMode}
           onStartClick={() => setMode("Battle")}
-          newCatName={newCatName}
-          setNewCatName={setNewCatName}
-          newImageLink={newImageLink}
-          setNewImageLink={setNewImageLink}
         />
       )}
       {mode === "Battle" && (

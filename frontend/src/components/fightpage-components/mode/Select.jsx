@@ -47,6 +47,7 @@ const Select = ({
           <div>
             <button
               type="button"
+              className="switch-cat-list"
               onClick={() => {
                 setMode("CustomSelect");
                 setNumber(0);
