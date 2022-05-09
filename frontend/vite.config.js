@@ -16,4 +16,5 @@ export default defineConfig({
       "@services": path.resolve(__dirname, "src/services"),
     },
   },
+  base: "/2022-03-js-laloupe-miew-miew-team-p2/",
 });

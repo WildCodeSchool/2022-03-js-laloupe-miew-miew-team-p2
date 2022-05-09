@@ -53,7 +53,7 @@ export default function Home() {
       </div>
       <div className="fight-meow">
         <NavLink
-          to="/content/fightpage"
+          to={`${import.meta.env.BASE_URL}content/fightpage`}
           className="fight-button"
           onClick={start}
         >

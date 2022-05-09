@@ -12,6 +12,9 @@ export default function Contact() {
   const handleFullNameChange = (e) => setFullName(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handleMessageChange = (e) => setMessage(e.target.value);
+  function Alert() {
+    alert("Your email has been sent");
+  }
   return (
     <form className="my-form">
       <input type="hidden" name="form-name" value="contact" />
@@ -55,7 +58,7 @@ export default function Contact() {
         onChange={handleMessageChange}
         required
       />
-      <button id="btn" type="submit">
+      <button id="btn" type="button" onClick={Alert}>
         SUBMIT
       </button>
       <Footer />
