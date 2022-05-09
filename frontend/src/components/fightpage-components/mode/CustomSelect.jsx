@@ -108,6 +108,11 @@ const CustomSelect = ({
       newCat.map((cats) => customCat.push(cats));
       setNewImageLink("");
       setNewCatName("");
+      setAttack(3);
+      setMagic(3);
+      setDefenseMin(7);
+      setDefenseMax(17);
+      setHealthPoint(14);
       localStorage.setItem("customCat", JSON.stringify(customCat));
     }
   };
