@@ -22,16 +22,22 @@ function App() {
   return loader ? (
     <Loader />
   ) : (
-    <div className="app">
-      <Routes>
-        <Route path={`${import.meta.env.BASE_URL}/`} element={<Home />} />
-        <Route path={`${import.meta.env.BASE_URL}content`} element={<Layout />}>
-          <Route path="fightpage" element={<FightPage />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="meow" element={<MeowWho />} />
-        </Route>
-      </Routes>
-    </div>
+    <section>
+      <div className="landscape">Please use Portrait mode only</div>
+      <div className="app">
+        <Routes>
+          <Route path={`${import.meta.env.BASE_URL}/`} element={<Home />} />
+          <Route
+            path={`${import.meta.env.BASE_URL}content`}
+            element={<Layout />}
+          >
+            <Route path="fightpage" element={<FightPage />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="meow" element={<MeowWho />} />
+          </Route>
+        </Routes>
+      </div>
+    </section>
   );
 }
 
