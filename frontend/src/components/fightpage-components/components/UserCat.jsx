@@ -32,11 +32,11 @@ const UserCat = ({ catSlide, number, index, isSelected, prevCat, nextCat }) => {
             {" "}
             <div>
               <p className="stats">
-                ⚔️ Attack: {catSlide.other_pets_friendly * 5}-
-                {catSlide.other_pets_friendly * 10}
+                ⚔️ Attack: {catSlide.other_pets_friendly * 7}-
+                {catSlide.other_pets_friendly * 11}
               </p>
               <p className="stats">
-                🪄 Magic: {catSlide.intelligence * 8}-
+                🪄 Magic: {catSlide.intelligence * 11}-
                 {catSlide.intelligence * 13}
               </p>
               <p className="stats">
