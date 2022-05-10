@@ -54,7 +54,7 @@ export default function Header() {
             : "navigation--title"
         }
       >
-        Meow Who ?
+        Meow Who
       </NavLink>
       <NavLink
         to={`${import.meta.env.BASE_URL}content/contact`}
