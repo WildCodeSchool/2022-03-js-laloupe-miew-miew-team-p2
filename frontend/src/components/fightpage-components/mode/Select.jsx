@@ -44,18 +44,20 @@ const Select = ({
             ))}
         </div>
         <div className="isselected-container">
-          <div>
-            <button
-              type="button"
-              className="switch-cat-list"
-              onClick={() => {
-                setMode("CustomSelect");
-                setNumber(0);
-              }}
-            >
-              Use custom cats
-            </button>
-          </div>
+          {!isSelected && (
+            <div>
+              <button
+                type="button"
+                className="switch-cat-list"
+                onClick={() => {
+                  setMode("CustomSelect");
+                  setNumber(0);
+                }}
+              >
+                Use custom cats
+              </button>
+            </div>
+          )}
           <div>
             {" "}
             {isSelected ? (

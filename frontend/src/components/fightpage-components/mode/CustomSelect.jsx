@@ -115,7 +115,9 @@ const CustomSelect = ({
       setDefenseMax(17);
       setHealthPoint(14);
       localStorage.setItem("customCat", JSON.stringify(customCat));
-      setNumber(number + 1);
+      if (customCat.length) {
+        setNumber(number + 1);
+      }
     }
   };
   const removeCat = () => {
@@ -148,20 +150,22 @@ const CustomSelect = ({
           ))}
         </div>
         <div className="isselected-container">
-          <div>
-            {" "}
-            <button
-              type="button"
-              className="switch-cat-list"
-              onClick={() => {
-                setMode("Select");
-                setNumber(0);
-              }}
-            >
-              Use default cats
-            </button>
-          </div>
-          {customCat.length ? (
+          {!isSelected && (
+            <div>
+              {" "}
+              <button
+                type="button"
+                className="switch-cat-list"
+                onClick={() => {
+                  setMode("Select");
+                  setNumber(0);
+                }}
+              >
+                Use default cats
+              </button>
+            </div>
+          )}
+          {customCat.length && !isSelected ? (
             <div>
               <button type="button" className="remove-btn" onClick={removeCat}>
                 {" "}

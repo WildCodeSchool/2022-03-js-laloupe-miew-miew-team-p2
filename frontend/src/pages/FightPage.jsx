@@ -18,6 +18,20 @@ const FightPage = () => {
   );
   const [cat, setCat] = useState(null);
   const [enemyCat, setEnemyCat] = useState([]);
+  const laPoule = [
+    {
+      name: "La Poule",
+      image_link:
+        "https://www.poulesenville.com/wp-content/uploads/2020/04/img-0549.jpeg",
+      other_pets_friendly: 6,
+      intelligence: 7,
+      min_weight: 20,
+      max_weight: 30,
+      max_life_expectancy: 2000,
+      min_life_expectancy: 25,
+      playfulness: 6,
+    },
+  ];
   const getCat = () => {
     axios
       .get("https://api.api-ninjas.com/v1/cats?min_weight=17", {
@@ -37,8 +51,12 @@ const FightPage = () => {
     setCustomCat(JSON.parse(localStorage.getItem("customCat")) || []);
   }, []);
 
+  useEffect(() => {
+    laPoule.map((poule) => enemyCat.push(poule));
+  }, [enemyCat]);
+
   const [number, setNumber] = useState(0);
-  const rdmNumber = getRandomNumber(0, 15);
+  const rdmNumber = getRandomNumber(0, 16);
   const [isSelected, setIsSelected] = useState(false);
   const [winner, setWinner] = useState(undefined);
   return (
