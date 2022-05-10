@@ -10,11 +10,11 @@ export default function Battle({ cat, number, rdmNumber, onResult, enemyCat }) {
   const userCat = {
     name: "Your cat",
     image: cat[number].image_link,
-    attack: cat[number].other_pets_friendly,
+    attack: cat[number].other_pets_friendly * 10,
     special: cat[number].intelligence,
     defenseMin: cat[number].min_weight,
     defenseMax: cat[number].max_weight,
-    health: cat[number].max_life_expectancy * 10,
+    health: cat[number].max_life_expectancy,
     luck: cat[number].playfulness,
     vitality: cat[number].min_life_expectancy,
   };
