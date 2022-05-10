@@ -28,7 +28,7 @@ const Select = ({
   return (
     cat && (
       <div className="select">
-        <h1 className="user-cat-title">Choose your Cat :</h1>
+        <h1 className="user-cat-title">Choose your CatFighter :</h1>
         <div className="slider">
           {cat.length &&
             cat.map((catSlide, index) => (

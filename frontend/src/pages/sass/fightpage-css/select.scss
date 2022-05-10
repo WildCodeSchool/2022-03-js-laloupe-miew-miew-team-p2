@@ -68,7 +68,7 @@ body {
   color: white;
   cursor: pointer;
   padding: 0.3rem 0.8rem;
-
+  margin-bottom: 1rem;
   &:hover {
     transition: 0.5s ease-in-out;
     color: black;
@@ -165,6 +165,31 @@ body {
   color: black;
   font-weight: bold;
 }
+.remove-btn {
+  margin: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgb(204, 60, 60);
+  font-size: 0.9em;
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 5px 2px black;
+  color: black;
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  margin: 0.5rem;
+
+  &:hover {
+    transition: 0.5s ease-in-out;
+    color:white;
+    box-shadow: 0px 0px 5px 2px white;
+  }
+}
+.no-cat-title {
+  margin: 1rem;
+  text-align: center;
+}
 .point-left-title {
   text-align: center;
   margin: 0.5rem;
@@ -174,6 +199,34 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.input-select {
+  border: none;
+  border-radius: 5px;
+  outline: none !important;
+  text-align: center;
+  height: 30px;
+  &:focus {
+    box-shadow: 0px 0px 16px 7px rgba(255, 255, 255, 0.25);
+  }
+  &::placeholder {
+    text-align: center;
+    font-family: "Cochin", sans-serif;
+  }
+}
+.input-select-2  {
+  border-radius: 5px;
+  border: none;
+  outline: none !important;
+  text-align: center;
+  height: 30px;
+  &:focus {
+    box-shadow: 0px 0px 16px 7px rgba(255, 255, 255, 0.25);
+  }
+  &::placeholder {
+    text-align: center;
+    font-family: "Cochin", sans-serif;
+  }
 }
 .assign-point-container {
   display: flex;
@@ -238,6 +291,10 @@ p {
     transition: 0.5s ease-in-out;
     color: black;
   }
+}
+.create-btn-container {
+  display: flex;
+  justify-content: center;
 }
 
 .change-point {

@@ -67,6 +67,7 @@ const FightPage = () => {
           isSelected={isSelected}
           setIsSelected={setIsSelected}
           setMode={setMode}
+          setCustomCat={setCustomCat}
           onStartClick={() => setMode("Battle")}
         />
       )}

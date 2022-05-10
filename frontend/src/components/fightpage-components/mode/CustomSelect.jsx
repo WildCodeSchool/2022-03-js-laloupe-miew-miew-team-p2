@@ -12,6 +12,7 @@ const CustomSelect = ({
   customCat,
   setCat,
   setMode,
+  setCustomCat,
 }) => {
   function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -114,17 +115,25 @@ const CustomSelect = ({
       setDefenseMax(17);
       setHealthPoint(14);
       localStorage.setItem("customCat", JSON.stringify(customCat));
+      setNumber(number + 1);
     }
   };
-
+  const removeCat = () => {
+    customCat.splice(number, 1);
+    if (number === customCat.length) {
+      setNumber(number - 1);
+    }
+    localStorage.setItem("customCat", JSON.stringify(customCat));
+  };
   useEffect(() => {
+    setCustomCat(JSON.parse(localStorage.getItem("customCat")) || []);
     setCat(customCat);
   }, [customCat]);
 
   return (
     cat && (
       <div className="select">
-        <h1 className="user-cat-title">Choose your Cat :</h1>
+        <h1 className="user-cat-title">Choose your CatFighter :</h1>
         <div className="slider">
           {cat.map((catSlide, index) => (
             <UserCat
@@ -152,26 +161,41 @@ const CustomSelect = ({
               Use default cats
             </button>
           </div>
-          <div>
-            {" "}
-            {isSelected ? (
-              <button
-                className="select-btn"
-                type="button"
-                onClick={() => setIsSelected(false)}
-              >
-                Cancel
+          {customCat.length ? (
+            <div>
+              <button type="button" className="remove-btn" onClick={removeCat}>
+                {" "}
+                Remove this cat ☠️
               </button>
-            ) : (
-              <button
-                className="select-btn"
-                type="button"
-                onClick={() => setIsSelected(true)}
-              >
-                Select
-              </button>
-            )}
-          </div>
+            </div>
+          ) : null}
+          {customCat.length ? (
+            <div>
+              {" "}
+              {isSelected ? (
+                <button
+                  className="select-btn"
+                  type="button"
+                  onClick={() => setIsSelected(false)}
+                >
+                  Cancel
+                </button>
+              ) : (
+                <button
+                  className="select-btn"
+                  type="button"
+                  onClick={() => setIsSelected(true)}
+                >
+                  Select
+                </button>
+              )}
+            </div>
+          ) : (
+            <h1 className="no-cat-title">
+              There is no custom Cat Fighter yet.
+            </h1>
+          )}
+
           <div>
             {" "}
             {isSelected ? (
@@ -189,6 +213,7 @@ const CustomSelect = ({
               {" "}
               <h1 className="user-cat-title">Add your Cat :</h1>
               <input
+                className="input-select"
                 placeholder="Enter your cat name"
                 type="text"
                 name="Cat name"
@@ -196,6 +221,7 @@ const CustomSelect = ({
                 onChange={(e) => setNewCatName(e.target.value)}
               />
               <input
+                className="input-select-2"
                 placeholder="Enter your cat image link"
                 type="text"
                 name="Cat image link"
@@ -204,7 +230,9 @@ const CustomSelect = ({
               />
             </div>
             <div className="assign-point-container">
-              <h3 className="point-left-title">Point left : {pointLeft}</h3>
+              <h3 className="point-left-title">
+                Points Remaining : {pointLeft}
+              </h3>
               <div className="assign-point-div">
                 <div className="point-title">
                   <h3>⚔️Attack : </h3>
@@ -230,7 +258,9 @@ const CustomSelect = ({
                     <button
                       type="button"
                       className={
-                        attack === 5 ? "change-point-dis" : "change-point"
+                        attack === 5 || pointLeft === 0
+                          ? "change-point-dis"
+                          : "change-point"
                       }
                       onClick={increaseAttack}
                     >
@@ -252,7 +282,9 @@ const CustomSelect = ({
                     <button
                       type="button"
                       className={
-                        magic === 5 ? "change-point-dis" : "change-point"
+                        magic === 5 || pointLeft === 0
+                          ? "change-point-dis"
+                          : "change-point"
                       }
                       onClick={increaseMagic}
                     >
@@ -273,7 +305,9 @@ const CustomSelect = ({
                     <p>{defenseMin}</p>
                     <button
                       className={
-                        defenseMin === 15 ? "change-point-dis" : "change-point"
+                        defenseMin === 15 || pointLeft === 0
+                          ? "change-point-dis"
+                          : "change-point"
                       }
                       type="button"
                       onClick={increaseDefenseMin}
@@ -295,7 +329,9 @@ const CustomSelect = ({
                     <p>{defenseMax}</p>
                     <button
                       className={
-                        defenseMax === 30 ? "change-point-dis" : "change-point"
+                        defenseMax === 30 || pointLeft === 0
+                          ? "change-point-dis"
+                          : "change-point"
                       }
                       type="button"
                       onClick={increaseDefenseMax}
@@ -317,7 +353,9 @@ const CustomSelect = ({
                     <p>{healthPoint}</p>
                     <button
                       className={
-                        healthPoint === 20 ? "change-point-dis" : "change-point"
+                        healthPoint === 20 || pointLeft === 0
+                          ? "change-point-dis"
+                          : "change-point"
                       }
                       type="button"
                       onClick={increaseHealthPoint}
@@ -327,15 +365,15 @@ const CustomSelect = ({
                   </div>
                 </div>
               </div>
-              <div>
-                <button
-                  type="button"
-                  className="create-cat-btn"
-                  onClick={createCat}
-                >
-                  Create your cat
-                </button>
-              </div>
+            </div>
+            <div className="create-btn-container">
+              <button
+                type="button"
+                className="create-cat-btn"
+                onClick={createCat}
+              >
+                Create your cat
+              </button>
             </div>
           </div>
         </div>
