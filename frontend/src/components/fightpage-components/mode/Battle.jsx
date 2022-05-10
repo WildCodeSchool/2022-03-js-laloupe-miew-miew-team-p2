@@ -6,7 +6,7 @@ import wait from "../components/waitFunction";
 import useOpponentChoice from "../components/useOpponentChoice";
 import "../../../pages/sass/fightpage-css/battle.scss";
 
-export default function Battle({ cat, number, rdmNumber, onResult }) {
+export default function Battle({ cat, number, rdmNumber, onResult, enemyCat }) {
   const userCat = {
     name: "Your cat",
     image: cat[number].image_link,
@@ -20,14 +20,14 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
   };
   const opponentCat = {
     name: "Opponent cat",
-    image: cat[rdmNumber].image_link,
-    attack: cat[rdmNumber].other_pets_friendly,
-    special: cat[rdmNumber].intelligence,
-    defenseMin: cat[rdmNumber].min_weight,
-    defenseMax: cat[rdmNumber].max_weight,
-    health: cat[rdmNumber].max_life_expectancy * 10,
-    luck: cat[rdmNumber].playfulness,
-    vitality: cat[rdmNumber].min_life_expectancy,
+    image: enemyCat[rdmNumber].image_link,
+    attack: enemyCat[rdmNumber].other_pets_friendly,
+    special: enemyCat[rdmNumber].intelligence,
+    defenseMin: enemyCat[rdmNumber].min_weight,
+    defenseMax: enemyCat[rdmNumber].max_weight,
+    health: enemyCat[rdmNumber].max_life_expectancy * 10,
+    luck: enemyCat[rdmNumber].playfulness,
+    vitality: enemyCat[rdmNumber].min_life_expectancy,
   };
 
   function getRdmNmb(min, max) {
@@ -267,7 +267,7 @@ export default function Battle({ cat, number, rdmNumber, onResult }) {
           {" "}
           <img
             className="opponent-img-battle"
-            src={cat[rdmNumber].image_link}
+            src={enemyCat[rdmNumber].image_link}
             alt="opponent cat"
           />
           <h1 className="opponent-name">Opponent : {opponentHealth}❤️</h1>

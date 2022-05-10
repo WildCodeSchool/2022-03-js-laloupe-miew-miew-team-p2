@@ -68,7 +68,7 @@ body {
   color: white;
   cursor: pointer;
   padding: 0.3rem 0.8rem;
-
+  margin-bottom: 1rem;
   &:hover {
     transition: 0.5s ease-in-out;
     color: black;
@@ -153,6 +153,158 @@ body {
   background-color: $black;
 }
 
+//Custom Select component
+.create-cat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid $grey;
+  width: 80%;
+  background-color: rgba(128, 128, 128, 0.619);
+  color: black;
+  font-weight: bold;
+}
+.remove-btn {
+  margin: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgb(204, 60, 60);
+  font-size: 0.9em;
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 5px 2px black;
+  color: black;
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  margin: 0.5rem;
+
+  &:hover {
+    transition: 0.5s ease-in-out;
+    color:white;
+    box-shadow: 0px 0px 5px 2px white;
+  }
+}
+.no-cat-title {
+  margin: 1rem;
+  text-align: center;
+}
+.point-left-title {
+  text-align: center;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.input-select {
+  border: none;
+  border-radius: 5px;
+  outline: none !important;
+  text-align: center;
+  height: 30px;
+  &:focus {
+    box-shadow: 0px 0px 16px 7px rgba(255, 255, 255, 0.25);
+  }
+  &::placeholder {
+    text-align: center;
+    font-family: "Cochin", sans-serif;
+  }
+}
+.input-select-2  {
+  border-radius: 5px;
+  border: none;
+  outline: none !important;
+  text-align: center;
+  height: 30px;
+  &:focus {
+    box-shadow: 0px 0px 16px 7px rgba(255, 255, 255, 0.25);
+  }
+  &::placeholder {
+    text-align: center;
+    font-family: "Cochin", sans-serif;
+  }
+}
+.assign-point-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.assign-point-div {
+  display: flex;
+  justify-content: space-around;
+}
+.point-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+p {
+  margin: 0px 0.5rem;
+}
+.create-attack,
+.create-magic,
+.create-defense-min,
+.create-defense-max,
+.create-health-point {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0.3rem;
+}
+.switch-cat-list {
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+  font-size: 1em;
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 5px 2px black;
+  color: rgb(204, 60, 60);
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  margin: 0.5rem;
+
+  &:hover {
+    transition: 0.5s ease-in-out;
+    color: black;
+  }
+}
+.create-cat-btn {
+  text-align: center;
+  background-color: white;
+  font-size: 1em;
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 5px 2px black;
+  color: rgb(204, 60, 60);
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  margin: 0.8rem 0.5rem;
+  font-weight: bold;
+
+  &:hover {
+    transition: 0.5s ease-in-out;
+    color: black;
+  }
+}
+.create-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.change-point {
+  cursor: pointer;
+}
+.change-point-dis {
+  background-color: rgba(119, 119, 119, 0.619);
+}
+//Responsive
+
 @media screen and (min-width: 750px) {
   .usercat-img-select {
     width: 400px;
@@ -163,5 +315,7 @@ body {
     margin: 20px;
     font-size: 120px;
   }
-  
+  .create-cat-container {
+    width: 620px;
+  }
 }

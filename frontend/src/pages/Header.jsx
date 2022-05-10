@@ -30,14 +30,14 @@ export default function Header() {
           <img src={Burger} alt="Burger icon" className="resize-burger" />
         </div>
       </div>
-      <NavLink to="/">
+      <NavLink to={`${import.meta.env.BASE_URL}/`}>
         <h1>CAT FIGHT</h1>
       </NavLink>
-      <NavLink to="/" className="navigation--title">
+      <NavLink to={`${import.meta.env.BASE_URL}`} className="navigation--title">
         Home
       </NavLink>
       <NavLink
-        to="/content/fightpage"
+        to={`${import.meta.env.BASE_URL}content/fightpage`}
         className={
           location.pathname === "/content/fightpage"
             ? "navigation--title active"
@@ -47,7 +47,7 @@ export default function Header() {
         Fight
       </NavLink>
       <NavLink
-        to="/content/meow"
+        to={`${import.meta.env.BASE_URL}content/meow`}
         className={
           location.pathname === "/content/meow"
             ? "navigation--title active"
@@ -57,7 +57,7 @@ export default function Header() {
         Meow Who ?
       </NavLink>
       <NavLink
-        to="/content/contact"
+        to={`${import.meta.env.BASE_URL}content/contact`}
         className={
           location.pathname === "/content/contact"
             ? "navigation--title active"
@@ -78,7 +78,7 @@ export default function Header() {
           id="s1"
           onChange={() => {
             setTimeout(() => setPhoneDisplay(true), 1000);
-            navigate("/content/meow");
+            navigate(`${import.meta.env.BASE_URL}content/meow`);
           }}
           checked={location.pathname === "/content/meow" ? "checked" : null}
         />
@@ -89,7 +89,7 @@ export default function Header() {
           id="s2"
           onChange={() => {
             setTimeout(() => setPhoneDisplay(true), 1000);
-            navigate("/content/fightpage");
+            navigate(`${import.meta.env.BASE_URL}content/fightpage`);
           }}
           checked={
             location.pathname === "/content/fightpage" ? "checked" : null
@@ -102,7 +102,7 @@ export default function Header() {
           id="s3"
           onChange={() => {
             setTimeout(() => setPhoneDisplay(true), 1000);
-            navigate("/content/contact");
+            navigate(`${import.meta.env.BASE_URL}content/contact`);
           }}
           checked={location.pathname === "/content/contact" ? "checked" : null}
         />
