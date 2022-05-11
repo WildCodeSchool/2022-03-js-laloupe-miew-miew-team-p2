@@ -87,7 +87,7 @@ export default function MeowWho() {
             setMode(mode !== "playfulness" ? "playfulness" : "");
           }}
         >
-          PLAYFULLNESS
+          MOST PLAYFUL
         </button>
         <button
           className={
@@ -100,7 +100,7 @@ export default function MeowWho() {
             setMode(mode !== "children-friendly" ? "children-friendly" : "");
           }}
         >
-          CHILDREN-FRIENDLY
+          MOST CHILDREN-FRIENDLY
         </button>
       </div>
 
