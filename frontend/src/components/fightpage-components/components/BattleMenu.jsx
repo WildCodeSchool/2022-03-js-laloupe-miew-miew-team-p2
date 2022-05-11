@@ -6,9 +6,20 @@ export default function BattleMenu({
   playerSpecialCD,
   playerHealCD,
   inSequence,
+  onKameha,
+  rdmNumber,
 }) {
   return (
     <div className="battle-menu">
+      {rdmNumber === 16 && (
+        <button
+          type="button"
+          className="kameha-btn"
+          onClick={turn === 0 && inSequence === false ? onKameha : null}
+        >
+          Kamehameha !!
+        </button>
+      )}
       <button
         type="button"
         className={turn === 0 ? "skills-btn" : "skills-btn-onCD"}

@@ -30,7 +30,7 @@ const Select = ({
       <div className="select">
         <h1 className="user-cat-title">Choose your CatFighter :</h1>
         <div className="slider">
-          {cat.length &&
+          {cat.length ? (
             cat.map((catSlide, index) => (
               <UserCat
                 number={number}
@@ -41,7 +41,10 @@ const Select = ({
                 prevCat={prevCat}
                 nextCat={nextCat}
               />
-            ))}
+            ))
+          ) : (
+            <h1>Cats are loading ...</h1>
+          )}
         </div>
         <div className="isselected-container">
           {!isSelected && (

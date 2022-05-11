@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { useEffect, useState } from "react";
 import UserCat from "../components/UserCat";
 import "../../../pages/sass/fightpage-css/select.scss";
@@ -118,6 +119,10 @@ const CustomSelect = ({
       if (customCat.length) {
         setNumber(number + 1);
       }
+    } else if (newCatName === "" || newImageLink === "") {
+      alert("Please add a name and an image link before creating your cat.");
+    } else if (pointLeft !== 0) {
+      alert("You need to use all your points before.");
     }
   };
   const removeCat = () => {

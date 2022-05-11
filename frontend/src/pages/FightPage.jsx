@@ -27,7 +27,7 @@ const FightPage = () => {
       intelligence: 7,
       min_weight: 20,
       max_weight: 30,
-      max_life_expectancy: 2000,
+      max_life_expectancy: 2500,
       min_life_expectancy: 25,
       playfulness: 6,
     },
@@ -40,10 +40,16 @@ const FightPage = () => {
         },
       })
       .then((response) => response.data)
-      .then((data) => {
-        setApiCat(data);
-        setEnemyCat(data);
-      });
+      .then((data) => setApiCat(data))
+      .then(() =>
+        axios.get("https://api.api-ninjas.com/v1/cats?min_weight=17", {
+          headers: {
+            "X-Api-Key": "nwEVbvsWgm1qxCZDGw8C6Q==qqvbZCxpZQd2jsjq",
+          },
+        })
+      )
+      .then((response) => response.data)
+      .then((data) => setEnemyCat(data));
   };
 
   useEffect(() => {
@@ -59,6 +65,7 @@ const FightPage = () => {
   const rdmNumber = getRandomNumber(0, 16);
   const [isSelected, setIsSelected] = useState(false);
   const [winner, setWinner] = useState(undefined);
+
   return (
     <div className="fight-container">
       {mode === "Select" && (
