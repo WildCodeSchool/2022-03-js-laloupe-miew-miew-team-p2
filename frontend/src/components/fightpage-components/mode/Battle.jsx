@@ -10,7 +10,7 @@ export default function Battle({ cat, number, rdmNumber, onResult, enemyCat }) {
   const userCat = {
     name: "Your cat",
     image: cat[number].image_link,
-    attack: cat[number].other_pets_friendly * 10,
+    attack: cat[number].other_pets_friendly,
     special: cat[number].intelligence,
     defenseMin: cat[number].min_weight,
     defenseMax: cat[number].max_weight,
