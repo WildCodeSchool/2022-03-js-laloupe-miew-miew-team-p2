@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   text-align: left;
   line-height: 30px;
   width: 100vw;
@@ -19,7 +18,6 @@
   border-radius: 50px;
   width: 80%;
   height: 300px;
-  border-radius: calc(var(--size) * 0.15);
   border-style: inset;
   border-color: #ed1342;
 }
@@ -44,6 +42,9 @@
 .cat-details {
   font-size: 1.5em;
 }
+.cat-details:hover {
+  color: #f6f6f686;
+}
 .details {
   margin-top: 30px;
   margin-left: 30px;
@@ -56,13 +57,16 @@
   font-size: large;
   color: #fbf8f8;
   border-radius: 5px;
-  border-color: rgb(204, 60, 60);
+  border-color: rgb(224, 5, 82);
   top: 20px;
   right: 20px;
   border: none;
   margin-top: 10px;
-  background-color: #f83d3d;
+  background-color: #d33164;
   width: 20px;
+}
+.animation-chat {
+  display: flex;
 }
 @media screen and (min-width: 500px) {
   .portail-image-chat {
