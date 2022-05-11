@@ -128,7 +128,7 @@ div.search {
   align-items: center;
   /* text-align: center; */
   justify-content: center;
-  font-size: smaller;
+  font-size: 0.8em;
   font-family: "Nosifer", sans-serif;
   background-color: rgba(246, 87, 111, 0.864);
   color: rgb(239, 226, 226);
