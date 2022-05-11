@@ -14,7 +14,7 @@ export default function Battle({ cat, number, rdmNumber, onResult, enemyCat }) {
     special: cat[number].intelligence,
     defenseMin: cat[number].min_weight,
     defenseMax: cat[number].max_weight,
-    health: cat[number].max_life_expectancy,
+    health: cat[number].max_life_expectancy * 10,
     luck: cat[number].playfulness,
     vitality: cat[number].min_life_expectancy,
   };
@@ -48,6 +48,12 @@ export default function Battle({ cat, number, rdmNumber, onResult, enemyCat }) {
       Math.floor((receiver.defenseMin + receiver.defenseMax) / 2);
     const finalDamage = damage > 0 ? damage : 0;
     return finalDamage;
+  };
+
+  const kameha = ({ attacker, receiver }) => {
+    const damage =
+      (attacker.special + attacker.attack) * 250 - receiver.defenseMax;
+    return damage;
   };
 
   const heal = ({ attacker }) => {
@@ -148,6 +154,43 @@ export default function Battle({ cat, number, rdmNumber, onResult, enemyCat }) {
               } else {
                 setOpponentSpecialCD(3);
               }
+
+              await wait(1500);
+
+              setTurn(turn === 0 ? 1 : 0);
+              setInSequence(false);
+            })();
+            break;
+          }
+          case "kameha": {
+            const damage = kameha({ attacker, receiver });
+
+            (async () => {
+              setInSequence(true);
+              setAnnouncerMessage(`⚔️ ${attacker.name} use KAMEHAMEHAAAA !!`);
+
+              await wait(2000);
+
+              if (damage <= 0) {
+                setAnnouncerMessage(`${attacker.name} missed !!`);
+              } else if (damage < 10) {
+                setAnnouncerMessage(`That's not very effective...`);
+              } else if (damage >= 35) {
+                setAnnouncerMessage(`It's over 9999 !!!! `);
+              } else {
+                setAnnouncerMessage(
+                  `${receiver.name} now feel like being freeza..`
+                );
+              }
+
+              if (turn === 0) {
+                setOpponentHealth((h) => (h - damage > 0 ? h - damage : 0));
+              } else {
+                setUserHealth((h) => (h - damage > 0 ? h - damage : 0));
+              }
+              await wait(2000);
+
+              setAnnouncerMessage(`Now it's ${receiver.name}'s turn !`);
 
               await wait(1500);
 
@@ -298,6 +341,8 @@ export default function Battle({ cat, number, rdmNumber, onResult, enemyCat }) {
               playerSpecialCD={playerSpecialCD}
               playerHealCD={playerHealCD}
               inSequence={inSequence}
+              rdmNumber={rdmNumber}
+              onKameha={() => setSequence({ turn, mode: "kameha" })}
               onAttack={() => setSequence({ turn, mode: "attack" })}
               onSpecial={() => setSequence({ turn, mode: "special" })}
               onHeal={() => setSequence({ turn, mode: "heal" })}
