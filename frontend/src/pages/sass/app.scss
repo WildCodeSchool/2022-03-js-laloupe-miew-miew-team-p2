@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+.app {
+  width: 100%;
+}
+.landscape {
+  display: none;
+}
+@media screen and (orientation: landscape) and (max-device-width: 900px) {
+  .app {
+    display: none;
+  }
+  .landscape {
+    font-family: "Shadows Into Light", sans-serif;
+    color: white;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    font-size: 2em;
+  }
+}

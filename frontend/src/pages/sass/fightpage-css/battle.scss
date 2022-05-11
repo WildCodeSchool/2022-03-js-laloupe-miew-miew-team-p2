@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+$black: #2c2f33;
+$white: #f6f6f6;
+$red: #d6204b;
+$red2: rgb(204, 60, 60);
+$grey: #c4c4c4;
+$background: #2c2f33;
+
+body {
+  background-color: $background;
+}
+
+//Battle Component
+.battle {
+  // width: 100%;
+  // height: 100%;
+  margin: 0.5rem;
+}
+
+.opponent-menu {
+  display: flex;
+  padding-top: 1rem;
+  justify-content: flex-end;
+}
+.opponent-name {
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+.player-health-point {
+  margin: auto;
+  text-align: center;
+}
+.opponent-health-point {
+  margin: auto;
+  text-align: center;
+}
+.opponent-img-battle {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  border: solid 3px rgb(80, 42, 194);
+  box-shadow: 0px 0px 10px 2px rgb(80, 42, 194);
+}
+.player-menu {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+}
+.player-div {
+  display: flex;
+}
+.player-name {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.player-img-battle {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  border: solid 3px $red;
+  box-shadow: 0px 0px 10px 2px $red;
+}
+.player-stats {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.vs-container {
+  display: none;
+}
+.vs-title {
+  text-shadow: 0 0 5px rgb(174 52 52), 0 0 10px rgb(174 52 52),
+    0 0 15px rgb(174 52 52), 0 0 20px rgb(174 52 52), 0 0 30px rgb(174 52 52),
+    0 0 40px rgb(174 52 52), 0 0 55px rgb(174 52 52), 0 0 75px rgb(174 52 52);
+  font-family: "Permanent Marker", cursive;
+  font-style: italic;
+  font-size: 120px;
+}
+
+//BattleMenu component
+.battle-menu {
+  // margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.5rem;
+  width: 100%;
+}
+.skills-btn {
+  text-align: center;
+  background-color: $red2;
+  font-family: "Nosifer", sans-serif;
+  transition: 0.5s ease-in-out;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 2px 2px 5px 2px black;
+  color: $white;
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  max-width: 210px;
+  &:hover {
+    transition: 0.5s ease-in-out;
+    color: black;
+  }
+}
+.skills-btn-onCD {
+  text-align: center;
+  background-color: rgb(105, 102, 102);
+  font-family: "Nosifer", sans-serif;
+  border-radius: 15px;
+  border: none;
+  color: $white;
+  padding: 0.3rem 0.8rem;
+  max-width: 210px;
+}
+.battle-announcer-div {
+  display: flex;
+  justify-content: center;
+}
+.skill-cd-count {
+  font-family: "Roboto", sans-serif;
+}
+.kameha-btn {
+  opacity: 0;
+  cursor: pointer;
+}
+//BattleAnnoncer component
+
+.battle-annoncer {
+  height: 80px;
+  margin: 20px 20px;
+  font-size: 1.2rem;
+  background-color: $red2;
+  transition: 0.5s ease-in-out;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 2px 2px 5px 2px black;
+  color: $white;
+  padding: 0.3rem 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 400px;
+}
+.battle-annoncer-text {
+  text-align: center;
+}
+
+@media screen and (min-width: 550px) {
+  .battle-menu {
+    width: 30%;
+  }
+  .skills-btn {
+    padding: 0.5rem;
+    height: 60px;
+    width: 250px;
+  }
+  .skills-btn-onCD {
+    padding: 0.5rem;
+    height: 60px;
+    width: 250px;
+  }
+  .battle-annoncer {
+    height: 110px;
+    max-width: 750px;
+    margin: 10px;
+  }
+  .opponent-menu {
+    margin-right: 1rem;
+  }
+  .player-div {
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  .battle-annoncer-text {
+    font-size: 25px;
+  }
+  .opponent-img-battle,
+  .player-img-battle {
+    width: 230px;
+    height: 230px;
+  }
+  .player-name,
+  .opponent-name {
+    font-size: 1.8rem;
+    margin: 1rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .battle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 33vh 20vh 33vh;
+  }
+  .vs-container {
+    display: flex;
+    justify-content: center;
+  }
+  .player-menu {
+    grid-row: 1;
+    grid-column: 1 / 4;
+  }
+  .player-div {
+    display: flex;
+    justify-content: center;
+  }
+  .vs-container {
+    grid-row: 2;
+    grid-column: 3/ 5;
+    display: flex;
+    align-items: center;
+  }
+  .battle-announcer-div {
+    grid-column: 1 / 4;
+    grid-row: 3;
+    display: flex;
+    align-items: center;
+  }
+  .opponent-menu {
+    grid-row: 3;
+    grid-column: 4 / 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .player-card {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .opponent-card {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .battle-annoncer {
+    height: 150px;
+  }
+  .opponent-name {
+    margin-bottom: 0.3rem;
+  }
+}

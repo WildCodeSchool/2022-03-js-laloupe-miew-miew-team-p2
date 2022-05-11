@@ -1,0 +1,102 @@
+.portail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  line-height: 30px;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: rgb(204, 60, 60);
+  background-color: #2c2f33;
+}
+.portail-image-chat {
+  border-radius: 50px;
+  width: 80%;
+  height: 300px;
+  border-style: inset;
+  border-color: #ed1342;
+}
+.button-card {
+  border-radius: 10px;
+  width: 250px;
+  height: 40px;
+  color: #f6f6f6;
+  background-color: rgb(204, 60, 60);
+  font-family: "Cochin";
+  font-size: larger;
+}
+.position-portail-image {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+#bold-title {
+  font-weight: bolder;
+}
+.cat-name,
+.cat-details {
+  font-size: 1.5em;
+}
+.cat-details:hover {
+  color: #f6f6f686;
+}
+.details {
+  margin-top: 30px;
+  margin-left: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.close-button {
+  cursor: pointer;
+  display: flex;
+  position: fixed;
+  font-size: large;
+  color: #fbf8f8;
+  border-radius: 5px;
+  border-color: rgb(224, 5, 82);
+  top: 20px;
+  right: 20px;
+  border: none;
+  margin-top: 10px;
+  background-color: #d33164;
+  width: 20px;
+}
+.animation-chat {
+  display: flex;
+}
+@media screen and (min-width: 500px) {
+  .portail-image-chat {
+    border-radius: 50px;
+    width: 80%;
+    height: 500px;
+    object-fit: cover;
+    object-position: top;
+    border-style: inset;
+    border-color: rgb(204, 60, 60);
+  }
+  .close-button {
+    cursor: pointer;
+    display: flex;
+    position: fixed;
+    font-size: large;
+    color: #fbf8f8;
+    border-radius: 5px;
+    border-color: rgb(204, 60, 60);
+    top: 20px;
+    right: 150px;
+    border: none;
+    margin-top: 60px;
+    background-color: #e85463;
+    width: 20px;
+  }
+  .portail {
+    display: flex;
+    flex-direction: row;
+    font-size: larger;
+    line-height: 200%;
+  }
+}

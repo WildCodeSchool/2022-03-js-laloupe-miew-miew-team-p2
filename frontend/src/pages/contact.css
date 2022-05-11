@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+.my-form {
+  font-size: 1rem;
+  color: rgb(204, 60, 60);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: content-box;
+  width: 100%;
+}
+.my-label {
+  justify-content: center;
+  display: flex;
+  font-weight: 400;
+  font-size: 1.1em;
+  font-family: "Nosifer", sans-serif;
+  color: rgb(204, 60, 60);
+}
+.my-title {
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  display: flex;
+  font-weight: 400;
+  font-size: 1.6em;
+  font-family: "Shadows Into Light", sans-serif;
+  color: white;
+}
+.input-contact {
+  width: 90%;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+  border: none;
+  margin: 0px auto;
+  transition: 3s;
+  padding: 5px;
+  -webkit-box-shadow: 0px 0px 16px 7px rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 0px 16px 7px rgba(255, 255, 255, 0.25);
+}
+.input-contact::placeholder {
+  font-size: 1em;
+  text-align: center;
+  font-family: "Cochin", sans-serif;
+  padding-top: 10px;
+  color: #23272a;
+}
+.textarea-contact {
+  height: 150px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1em;
+  padding-top: 20px;
+  padding-left: 5px;
+  color: #23272a;
+  resize: none;
+  transition: 3s;
+  width: 90%;
+  -webkit-box-shadow: 0px 0px 16px 7px rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 0px 16px 7px rgba(255, 255, 255, 0.25);
+}
+.textarea-contact::placeholder {
+  font-size: 1em;
+  font-family: "Cochin", sans-serif;
+  text-align: center;
+  padding-top: 10px;
+  color: #23272a;
+}
+#btn {
+  font-family: "Nosifer", sans-serif;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(204, 60, 60);
+  height: 50px;
+  width: 70%;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 2s;
+}
+#btn:hover {
+  background-color: #23272a;
+  transform: rotate(2deg);
+  border-radius: 20px;
+  color: white;
+  transition: 2s all ease-in-out;
+  -webkit-box-shadow: 0px 0px 16px 7px rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 0px 16px 7px rgba(255, 255, 255, 0.25);
+}
+.input-contact::selection {
+  color: #23272a;
+}
+.input-contact:focus {
+  outline: none !important;
+  border-radius: 20px;
+  transform: rotate(2deg);
+  transition: 3s;
+  box-shadow: 0 0 5px rgb(204, 60, 60), 0 0 10px white,
+    0 0 20px rgb(204, 60, 60), 0 0 20px white,
+    0 0 50px rgba(255, 255, 255, 0.05), 0 0 20px rgb(204, 60, 60),
+    0 0 50px rgb(204, 60, 60), 0 0 50px rgb(204, 60, 60);
+}
+.textarea-contact::selection {
+  color: #23272a;
+}
+.textarea-contact:focus {
+  outline: none !important;
+  transform: rotate(2deg);
+  border-radius: 20px;
+  transition: 3s;
+  box-shadow: 0 0 5px rgb(204, 60, 60), 0 0 10px white,
+    0 0 20px rgb(204, 60, 60), 0 0 20px white,
+    0 0 50px rgba(255, 255, 255, 0.05), 0 0 20px rgb(204, 60, 60),
+    0 0 50px rgb(204, 60, 60), 0 0 50px rgb(204, 60, 60);
+}

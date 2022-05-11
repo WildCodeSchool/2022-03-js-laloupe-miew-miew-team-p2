@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+
+.card {
+  /* flex: 1 0 25%; */
+  min-width: 260px;
+  max-width: 280px;
+  /* height: 200px; */
+  /* background: #00030e; */
+  border-radius: 35px;
+  margin: 5px;
+  padding: 26px 15px 30px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: 1s;
+  transform: scale(1);
+}
+
+.image-chat {
+  transform: translateY(-5px);
+  border-style: inset;
+  border-color: #ed1342;
+  border-radius: calc(var(--size) * 0.15);
+
+  /* box-shadow: 5px 1px 10px 5px hsl(0, 1%, 16%); */
+  width: 100%;
+  height: 254px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50px;
+  /* box-shadow: 0 8px 1px rgba(255, 255, 255, 0.1),
+    0 16px 1px rgba(255, 255, 255, 0.05); */
+}
+.image-chat:hover {
+  cursor: pointer;
+}
+.cards {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+.card:hover {
+  transition: 1s;
+  transform: scale(1.1);
+}
+
+.cat-name {
+  text-align: center;
+  color: #fffefe;
+}
+
+.cat-details {
+  text-align: left;
+  color: rgb(227, 220, 218);
+  margin: 0;
+}
+
+.img :hover {
+  filter: blur(5px);
+}
+
+.sous-title-meow-page {
+  font-size: 2em;
+  font-family: "Shadows Into Light", sans-serif;
+  letter-spacing: 3.5px;
+  text-align: center;
+  color: #fffefe;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.title-meow-page {
+  text-align: center;
+  color: #ed1342;
+
+  margin: 0px;
+}
+.search {
+  text-align: center;
+}
+.meowwho-page {
+  color: #ed1342;
+}
+#name-filter {
+  box-shadow: 0px 0px 70px 5px rgba(248, 246, 246, 20%);
+  border-radius: 20px;
+  margin: 20px auto;
+  color: rgb(137, 128, 128);
+  width: 70%;
+  height: 50px;
+  border: none;
+  transition: 3s;
+}
+#name-filter::placeholder {
+  display: flex;
+  text-align: center;
+  font-size: 1.5em;
+}
+div.search {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* padding: 50px; */
+}
+#name-filter:focus {
+  outline: none !important;
+  border-radius: 20px;
+  transform: rotate(2deg);
+  transition: 3s;
+  box-shadow: 0 0 5px rgb(204, 60, 60), 0 0 10px white,
+    0 0 20px rgb(204, 60, 60), 0 0 20px white,
+    0 0 50px rgba(255, 255, 255, 0.05), 0 0 20px rgb(204, 60, 60),
+    0 0 50px rgb(204, 60, 60), 0 0 50px rgb(204, 60, 60);
+}
+.search-title {
+  font-size: 2em;
+  font-family: "Shadows Into Light", sans-serif;
+  letter-spacing: 3.5px;
+}
+.filter-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button-filter {
+  display: flex;
+  align-items: center;
+  /* text-align: center; */
+  justify-content: center;
+  font-size: smaller;
+  font-family: "Nosifer", sans-serif;
+  background-color: rgba(246, 87, 111, 0.864);
+  color: rgb(239, 226, 226);
+  margin: 10px;
+  border-radius: 20px;
+  height: 55px;
+  width: 150px;
+  border-color: #ed1342;
+}
+.button-filter:hover {
+  cursor: pointer;
+}
+.button-filter-active {
+  background-color: #eba4b3;
+  font-size: smaller;
+  font-family: "Nosifer", sans-serif;
+  margin: 10px;
+  border-radius: 20px;
+  height: 55px;
+  width: 150px;
+  border-color: #ed1342;
+}
+.button-filter-active2 {
+  background-color: #f4af7a;
+  font-size: smaller;
+  font-family: "Nosifer", sans-serif;
+  margin: 10px;
+  border-radius: 20px;
+  height: 55px;
+  width: 150px;
+  border-color: #eda413;
+}
+.button-filter-active3 {
+  background-color: #a4bfeb;
+  font-size: smaller;
+  font-family: "Nosifer", sans-serif;
+  margin: 10px;
+  border-radius: 20px;
+  height: 55px;
+  width: 150px;
+  border-color: #1387ed;
+}
+@media screen and (min-width: 500px) {
+  .filter-buttons-container {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+
+    font-size: smaller;
+    font-family: "Nosifer", sans-serif;
+    /* background-color: grey; */
+    color: rgb(239, 226, 226);
+    margin: 10px;
+    border-radius: 20px;
+    /* height: 55px; */
+    /* width: 150px; */
+    border-color: #ed1342;
+  }
+}
