@@ -95,7 +95,7 @@
 }
 .input-contact:focus {
   outline: none !important;
-  border-radius: 15%;
+  border-radius: 20px;
   transform: rotate(2deg);
   transition: 3s;
   box-shadow: 0 0 5px rgb(204, 60, 60), 0 0 10px white,
@@ -109,7 +109,7 @@
 .textarea-contact:focus {
   outline: none !important;
   transform: rotate(2deg);
-  border-radius: 15%;
+  border-radius: 20px;
   transition: 3s;
   box-shadow: 0 0 5px rgb(204, 60, 60), 0 0 10px white,
     0 0 20px rgb(204, 60, 60), 0 0 20px white,
