@@ -116,7 +116,9 @@ const CustomSelect = ({
       setDefenseMax(17);
       setHealthPoint(14);
       localStorage.setItem("customCat", JSON.stringify(customCat));
-      if (customCat.length) {
+      if (customCat.length === 1) {
+        setNumber(0);
+      } else if (customCat.length > 1) {
         setNumber(number + 1);
       }
     } else if (newCatName === "" || newImageLink === "") {
